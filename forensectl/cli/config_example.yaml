@@ -1,0 +1,322 @@
+# Archivo de configuración de ejemplo para ForenseCTL
+# Copia este archivo como config.yaml y personaliza según tus necesidades
+
+# Configuración general
+general:
+  # Directorio de trabajo por defecto
+  work_directory: "./forensics_workspace"
+  
+  # Nivel de logging (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  log_level: "INFO"
+  
+  # Directorio de logs
+  log_directory: "./logs"
+  
+  # Directorio temporal
+  temp_directory: "./temp"
+  
+  # Número máximo de trabajos paralelos
+  max_parallel_jobs: 4
+  
+  # Timeout por defecto en segundos
+  default_timeout: 3600
+
+# Configuración de casos
+cases:
+  # Formato de ID de caso por defecto
+  id_format: "CASE-{date}-{org}-{type}"
+  
+  # Directorio de casos
+  cases_directory: "./cases"
+  
+  # Retención por defecto en días
+  default_retention_days: 2555  # 7 años
+  
+  # Crear backup automático al cerrar caso
+  auto_backup_on_close: true
+  
+  # Comprimir casos archivados
+  compress_archived_cases: true
+
+# Configuración de evidencias
+evidence:
+  # Directorio de evidencias
+  evidence_directory: "./evidence"
+  
+  # Algoritmos de hash por defecto
+  default_hash_algorithms:
+    - "md5"
+    - "sha1"
+    - "sha256"
+  
+  # Verificar integridad automáticamente
+  auto_verify_integrity: true
+  
+  # Crear imágenes forenses por defecto
+  create_forensic_images: true
+  
+  # Formato de imagen por defecto (raw, e01, aff)
+  default_image_format: "e01"
+  
+  # Nivel de compresión (0-9)
+  compression_level: 6
+
+# Configuración de análisis
+analysis:
+  # Directorio de resultados
+  results_directory: "./analysis_results"
+  
+  # Configuración de Volatility
+  volatility:
+    # Ruta al ejecutable de Volatility3
+    executable_path: "vol.py"
+    
+    # Directorio de símbolos
+    symbols_directory: "./volatility_symbols"
+    
+    # Plugins por defecto para análisis rápido
+    default_plugins:
+      - "windows.info"
+      - "windows.pslist"
+      - "windows.psscan"
+      - "windows.netstat"
+      - "windows.filescan"
+  
+  # Configuración de The Sleuth Kit
+  sleuthkit:
+    # Directorio de instalación
+    installation_directory: "/usr/local/bin"
+    
+    # Incluir archivos eliminados por defecto
+    include_deleted_files: true
+    
+    # Analizar slack space
+    analyze_slack_space: false
+  
+  # Configuración de plaso
+  plaso:
+    # Ruta al ejecutable de log2timeline
+    log2timeline_path: "log2timeline.py"
+    
+    # Ruta al ejecutable de psort
+    psort_path: "psort.py"
+    
+    # Número de trabajadores
+    workers: 4
+    
+    # Parsers por defecto
+    default_parsers:
+      - "win_evt"
+      - "winevtx"
+      - "prefetch"
+      - "lnk"
+      - "olecf"
+      - "chrome_history"
+      - "firefox_history"
+
+# Configuración de YARA
+yara:
+  # Directorio de reglas
+  rules_directory: "./yara_rules"
+  
+  # Conjuntos de reglas por defecto
+  default_rule_sets:
+    - "malware"
+    - "apt"
+    - "crypto"
+  
+  # Tamaño máximo de archivo a escanear (en MB)
+  max_file_size_mb: 100
+  
+  # Número de hilos para escaneo
+  scan_threads: 4
+  
+  # Incluir archivos comprimidos
+  scan_compressed: true
+  
+  # Timeout por archivo en segundos
+  file_timeout: 60
+
+# Configuración de reportes
+reports:
+  # Directorio de reportes
+  reports_directory: "./reports"
+  
+  # Directorio de plantillas
+  templates_directory: "./templates"
+  
+  # Plantilla por defecto
+  default_template: "standard"
+  
+  # Formato por defecto
+  default_format: "pdf"
+  
+  # Incluir metadatos por defecto
+  include_metadata: true
+  
+  # Firmar reportes digitalmente
+  digital_signature: false
+  
+  # Configuración de firma digital
+  signature:
+    certificate_path: ""
+    private_key_path: ""
+    password: ""
+
+# Configuración de cadena de custodia
+chain_of_custody:
+  # Requerir firma digital
+  require_digital_signature: false
+  
+  # Verificar automáticamente
+  auto_verify: true
+  
+  # Incluir timestamps
+  include_timestamps: true
+  
+  # Formato de exportación por defecto
+  default_export_format: "pdf"
+
+# Configuración de verificación
+verification:
+  # Verificar integridad automáticamente
+  auto_verify: true
+  
+  # Algoritmos de hash para verificación
+  hash_algorithms:
+    - "sha256"
+    - "sha512"
+  
+  # Verificar firmas digitales
+  verify_digital_signatures: true
+  
+  # Timeout para verificación en segundos
+  verification_timeout: 300
+
+# Configuración de retención
+retention:
+  # Política por defecto
+  default_policy:
+    retention_period_days: 2555  # 7 años
+    auto_delete: false
+    legal_hold_enabled: false
+    notification_days_before: 30
+  
+  # Crear backup antes de eliminar
+  backup_before_delete: true
+  
+  # Directorio de backups
+  backup_directory: "./backups"
+
+# Configuración de workflows
+workflows:
+  # Directorio de workflows
+  workflows_directory: "./workflows"
+  
+  # Directorio de plantillas
+  templates_directory: "./workflow_templates"
+  
+  # Ejecución paralela por defecto
+  default_parallel_execution: false
+  
+  # Continuar en caso de error
+  continue_on_error: false
+  
+  # Guardar resultados intermedios
+  save_intermediate_results: true
+  
+  # Timeout por paso en segundos
+  step_timeout: 1800
+
+# Configuración de red
+network:
+  # Proxy HTTP
+  http_proxy: ""
+  
+  # Proxy HTTPS
+  https_proxy: ""
+  
+  # Timeout de conexión en segundos
+  connection_timeout: 30
+  
+  # Reintentos
+  max_retries: 3
+
+# Configuración de seguridad
+security:
+  # Encriptar datos sensibles
+  encrypt_sensitive_data: true
+  
+  # Algoritmo de encriptación
+  encryption_algorithm: "AES-256"
+  
+  # Requerir autenticación
+  require_authentication: false
+  
+  # Configuración de autenticación
+  authentication:
+    method: "local"  # local, ldap, oauth
+    session_timeout: 3600
+
+# Configuración de notificaciones
+notifications:
+  # Habilitar notificaciones
+  enabled: false
+  
+  # Email
+  email:
+    smtp_server: ""
+    smtp_port: 587
+    username: ""
+    password: ""
+    from_address: ""
+    use_tls: true
+  
+  # Slack
+  slack:
+    webhook_url: ""
+    channel: "#forensics"
+  
+  # Eventos a notificar
+  notify_events:
+    - "case_created"
+    - "analysis_completed"
+    - "report_generated"
+    - "verification_failed"
+    - "retention_expiring"
+
+# Configuración de integración
+integrations:
+  # MISP
+  misp:
+    enabled: false
+    url: ""
+    api_key: ""
+    verify_ssl: true
+  
+  # TheHive
+  thehive:
+    enabled: false
+    url: ""
+    api_key: ""
+  
+  # SIEM
+  siem:
+    enabled: false
+    type: "splunk"  # splunk, elastic, qradar
+    url: ""
+    credentials: ""
+
+# Configuración de desarrollo
+development:
+  # Modo debug
+  debug_mode: false
+  
+  # Profiling
+  enable_profiling: false
+  
+  # Métricas
+  collect_metrics: false
+  
+  # Directorio de métricas
+  metrics_directory: "./metrics"
