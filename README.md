@@ -35,8 +35,8 @@ ForenseCTL es una herramienta profesional de análisis forense digital que autom
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/your-org/forense-automatizado-blueteam.git
-cd forense-automatizado-blueteam
+git clone https://github.com/ismaiars/ForenseCTL.git
+cd ForenseCTL
 
 # Setup automático
 make setup
