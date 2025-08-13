@@ -3,10 +3,13 @@
 import json
 import subprocess
 import uuid
-import yara
+try:
+    import yara
+except ImportError:
+    yara = None
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Optional, Any, Union
+from typing import Any, Dict, List, Optional, Union
 
 from forensectl import config, logger
 from forensectl.core.chain_of_custody import ChainOfCustody
@@ -23,6 +26,9 @@ class YaraScanner:
             case_id: ID del caso
             examiner: Examinador responsable
         """
+        if yara is None:
+            raise ImportError("YARA no está instalado. Instale yara-python para usar este módulo.")
+            
         self.case_id = case_id
         self.examiner = examiner
         
@@ -483,6 +489,8 @@ class YaraScanner:
         """
         # Validar regla YARA
         try:
+            if yara is None:
+                raise ValueError("YARA no está disponible")
             yara.compile(source=rule_content)
         except Exception as e:
             raise ValueError(f"Regla YARA inválida: {e}")
@@ -544,23 +552,270 @@ class YaraScanner:
         Returns:
             Información de la actualización
         """
-        # TODO: Implementar descarga y actualización de reglas
-        # Por ahora, retornar placeholder
+        import requests
+        import zipfile
+        import tempfile
+        import shutil
+        from urllib.parse import urlparse
         
-        logger.info(f"Actualización de reglas desde {repository_url} (no implementado)")
-        
-        return {
-            "status": "not_implemented",
+        update_info = {
             "repository_url": repository_url,
             "categories_requested": categories_to_update or [],
-            "note": "Rule repository update pending implementation"
+            "downloaded_rules": [],
+            "updated_categories": [],
+            "errors": []
         }
+        
+        try:
+            logger.info(f"Actualizando reglas desde {repository_url}")
+            
+            # Crear directorio temporal
+            with tempfile.TemporaryDirectory() as temp_dir:
+                temp_path = Path(temp_dir)
+                
+                # Descargar repositorio
+                if repository_url.endswith('.git'):
+                    # Repositorio Git
+                    download_result = self._download_git_repository(repository_url, temp_path)
+                elif repository_url.endswith('.zip'):
+                    # Archivo ZIP
+                    download_result = self._download_zip_repository(repository_url, temp_path)
+                else:
+                    # Intentar como repositorio GitHub
+                    if 'github.com' in repository_url:
+                        zip_url = repository_url.replace('github.com', 'github.com').rstrip('/') + '/archive/main.zip'
+                        download_result = self._download_zip_repository(zip_url, temp_path)
+                    else:
+                        raise ValueError(f"Formato de repositorio no soportado: {repository_url}")
+                
+                if not download_result["success"]:
+                    update_info["errors"].append(download_result["error"])
+                    update_info["status"] = "error"
+                    return update_info
+                
+                # Buscar archivos .yar y .yara
+                rule_files = []
+                for pattern in ['**/*.yar', '**/*.yara']:
+                    rule_files.extend(temp_path.glob(pattern))
+                
+                if not rule_files:
+                    update_info["errors"].append("No se encontraron archivos de reglas YARA")
+                    update_info["status"] = "error"
+                    return update_info
+                
+                # Filtrar por categorías si se especificaron
+                if categories_to_update:
+                    filtered_files = []
+                    for rule_file in rule_files:
+                        for category in categories_to_update:
+                            if category.lower() in str(rule_file).lower():
+                                filtered_files.append(rule_file)
+                                break
+                    rule_files = filtered_files
+                
+                # Copiar reglas al directorio de reglas
+                rules_dir = self.rules_dir
+                rules_dir.mkdir(parents=True, exist_ok=True)
+                
+                # Crear subdirectorio para el repositorio
+                repo_name = urlparse(repository_url).path.split('/')[-1].replace('.git', '')
+                repo_dir = rules_dir / repo_name
+                repo_dir.mkdir(exist_ok=True)
+                
+                copied_count = 0
+                for rule_file in rule_files:
+                    try:
+                        # Validar regla antes de copiar
+                        if self._validate_yara_rule(rule_file):
+                            dest_file = repo_dir / rule_file.name
+                            shutil.copy2(rule_file, dest_file)
+                            update_info["downloaded_rules"].append(str(dest_file))
+                            copied_count += 1
+                            
+                            # Determinar categoría
+                            category = self._determine_rule_category(rule_file)
+                            if category and category not in update_info["updated_categories"]:
+                                update_info["updated_categories"].append(category)
+                        else:
+                            update_info["errors"].append(f"Regla inválida: {rule_file.name}")
+                    except Exception as e:
+                        update_info["errors"].append(f"Error copiando {rule_file.name}: {str(e)}")
+                
+                # Actualizar índice de reglas
+                self._update_rules_index()
+                
+                logger.info(f"Actualizadas {copied_count} reglas desde {repository_url}")
+                
+                update_info["status"] = "success"
+                update_info["rules_downloaded"] = copied_count
+                update_info["repository_directory"] = str(repo_dir)
+                
+                # Agregar a cadena de custodia
+                self.chain_of_custody.add_entry(
+                    action="rules_update",
+                    description=f"Actualización de reglas YARA desde {repository_url}",
+                    examiner=self.examiner,
+                    evidence_path="",
+                    metadata={
+                        "repository_url": repository_url,
+                        "rules_downloaded": copied_count,
+                        "categories": update_info["updated_categories"],
+                        "destination": str(repo_dir)
+                    }
+                )
+                
+                return update_info
+                
+        except Exception as e:
+            logger.error(f"Error actualizando reglas: {e}")
+            update_info["status"] = "error"
+            update_info["errors"].append(str(e))
+            return update_info
+    
+    def _download_git_repository(self, repository_url: str, temp_path: Path) -> Dict[str, Any]:
+        """Descargar repositorio Git.
+        
+        Args:
+            repository_url: URL del repositorio Git
+            temp_path: Directorio temporal
+            
+        Returns:
+            Resultado de la descarga
+        """
+        try:
+            result = subprocess.run(
+                ["git", "clone", "--depth", "1", repository_url, str(temp_path / "repo")],
+                capture_output=True,
+                text=True,
+                timeout=300
+            )
+            
+            if result.returncode == 0:
+                return {"success": True}
+            else:
+                return {
+                    "success": False,
+                    "error": f"Error clonando repositorio: {result.stderr}"
+                }
+                
+        except subprocess.TimeoutExpired:
+            return {
+                "success": False,
+                "error": "Timeout descargando repositorio"
+            }
+        except Exception as e:
+            return {
+                "success": False,
+                "error": f"Error ejecutando git: {str(e)}"
+            }
+    
+    def _download_zip_repository(self, zip_url: str, temp_path: Path) -> Dict[str, Any]:
+        """Descargar repositorio como ZIP.
+        
+        Args:
+            zip_url: URL del archivo ZIP
+            temp_path: Directorio temporal
+            
+        Returns:
+            Resultado de la descarga
+        """
+        try:
+            import requests
+            import zipfile
+            
+            response = requests.get(zip_url, timeout=300)
+            response.raise_for_status()
+            
+            zip_file = temp_path / "repo.zip"
+            with open(zip_file, "wb") as f:
+                f.write(response.content)
+            
+            with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+                zip_ref.extractall(temp_path / "repo")
+            
+            return {"success": True}
+            
+        except requests.RequestException as e:
+            return {
+                "success": False,
+                "error": f"Error descargando ZIP: {str(e)}"
+            }
+        except zipfile.BadZipFile:
+            return {
+                "success": False,
+                "error": "Archivo ZIP corrupto"
+            }
+        except Exception as e:
+            return {
+                "success": False,
+                "error": f"Error procesando ZIP: {str(e)}"
+            }
+    
+    def _validate_yara_rule(self, rule_file: Path) -> bool:
+        """Validar regla YARA.
+        
+        Args:
+            rule_file: Archivo de regla
+            
+        Returns:
+            True si la regla es válida
+        """
+        try:
+            if yara is None:
+                return False
+                
+            with open(rule_file, 'r', encoding='utf-8', errors='ignore') as f:
+                rule_content = f.read()
+            
+            yara.compile(source=rule_content)
+            return True
+            
+        except Exception:
+            return False
+    
+    def _determine_rule_category(self, rule_file: Path) -> Optional[str]:
+        """Determinar categoría de regla basada en el nombre del archivo.
+        
+        Args:
+            rule_file: Archivo de regla
+            
+        Returns:
+            Categoría determinada
+        """
+        file_name = rule_file.name.lower()
+        file_path = str(rule_file).lower()
+        
+        category_keywords = {
+            "malware": ["malware", "virus", "trojan"],
+            "apt": ["apt", "advanced", "persistent"],
+            "ransomware": ["ransomware", "crypto", "locker"],
+            "trojan": ["trojan", "backdoor"],
+            "rootkit": ["rootkit", "stealth"],
+            "webshell": ["webshell", "shell", "web"],
+            "packer": ["packer", "upx", "packed"],
+            "exploit": ["exploit", "cve", "vulnerability"],
+            "suspicious": ["suspicious", "generic"]
+        }
+        
+        for category, keywords in category_keywords.items():
+            if any(keyword in file_name or keyword in file_path for keyword in keywords):
+                return category
+        
+        return "custom"
+    
+    def _update_rules_index(self) -> None:
+        """Actualizar índice de reglas disponibles."""
+        for category in self.rule_categories:
+            category_dir = self.rules_dir / category
+            if category_dir.exists():
+                rule_files = list(category_dir.glob("*.yar")) + list(category_dir.glob("*.yara"))
+                self.rule_categories[category]["rules"] = [str(f) for f in rule_files]
     
     def _compile_rules(
         self,
         rule_categories: Optional[List[str]],
         custom_rules: Optional[List[Union[str, Path]]]
-    ) -> Optional[yara.Rules]:
+    ) -> Optional[Any]:
         """Compilar reglas YARA.
         
         Args:
@@ -605,6 +860,10 @@ class YaraScanner:
             return None
         
         try:
+            if yara is None:
+                logger.error("YARA no está disponible")
+                return None
+                
             logger.info(f"Compilando {len(rule_sources)} reglas YARA")
             return yara.compile(filepaths=rule_sources)
         except Exception as e:
@@ -660,7 +919,7 @@ class YaraScanner:
     def _scan_file(
         self,
         file_path: Path,
-        compiled_rules: yara.Rules,
+        compiled_rules: Any,
         timeout: int
     ) -> Dict[str, Any]:
         """Escanear archivo individual.
@@ -903,7 +1162,7 @@ class YaraScanner:
             "suspicious": [
                 {
                     "name": "base64_encoded",
-                    "content": '''rule base64_encoded {
+                    "content": r'''rule base64_encoded {
     meta:
         description = "Detecta contenido codificado en base64"
         author = "ForenseCTL"

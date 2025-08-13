@@ -44,7 +44,7 @@ class CaseManager:
         if not self._validate_case_id(case_id):
             raise ValueError(
                 f"ID de caso inválido: {case_id}. "
-                "Formato esperado: CASE-YYYYMMDD-ORG-INCIDENT"
+                "Formatos aceptados: CASO-XXX (ej: CASO-001) o CASE-YYYYMMDD-ORG-INCIDENT"
             )
         
         case_dir = self.cases_dir / case_id
@@ -245,9 +245,14 @@ class CaseManager:
         """
         import re
         
-        # Formato: CASE-YYYYMMDD-ORG-INCIDENT
-        pattern = r"^CASE-\d{8}-[A-Z0-9]+-[A-Z0-9-]+$"
-        return bool(re.match(pattern, case_id.upper()))
+        # Formato nuevo simple: CASO-XXX (donde XXX son 3 dígitos)
+        simple_pattern = r"^CASO-\d{3}$"
+        
+        # Formato antiguo: CASE-YYYYMMDD-ORG-INCIDENT
+        legacy_pattern = r"^CASE-\d{8}-[A-Z0-9]+-[A-Z0-9-]+$"
+        
+        case_id_upper = case_id.upper()
+        return bool(re.match(simple_pattern, case_id_upper) or re.match(legacy_pattern, case_id_upper))
     
     def _get_directory_readme(self, directory: str) -> str:
         """Generar contenido README para directorios del caso.

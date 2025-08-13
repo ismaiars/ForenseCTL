@@ -88,7 +88,7 @@ def main(
 
 @app.command("init-case")
 def init_case(
-    case_id: str = typer.Option(..., "--case", "-c", help="ID del caso (ej: CASE-20250812-ORG-INCIDENT)"),
+    case_id: str = typer.Option(..., "--case", "-c", help="ID del caso (ej: CASO-001 o CASE-20250812-ORG-INCIDENT)"),
     examiner: str = typer.Option(..., "--examiner", "-e", help="Nombre del examinador"),
     description: Optional[str] = typer.Option(None, "--description", "-d", help="Descripción del caso"),
     organization: Optional[str] = typer.Option(None, "--organization", "-o", help="Organización"),
@@ -114,9 +114,9 @@ def init_case(
             case_manager = CaseManager()
         
         # Validar formato de case_id
-        if not case_manager.validate_case_id(case_id):
+        if not case_manager._validate_case_id(case_id):
             rprint(f"[red]❌ Formato de case_id inválido: {case_id}[/red]")
-            rprint("[yellow]Formato esperado: CASE-YYYYMMDD-ORG-INCIDENT[/yellow]")
+            rprint("[yellow]Formatos aceptados: CASO-XXX (ej: CASO-001) o CASE-YYYYMMDD-ORG-INCIDENT[/yellow]")
             raise typer.Exit(1)
         
         # Verificar si el caso ya existe

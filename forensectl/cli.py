@@ -73,7 +73,7 @@ def case() -> None:
 @click.option(
     "--case", "-c", 
     required=True, 
-    help="ID del caso (formato: CASE-YYYYMMDD-ORG-INCIDENT)"
+    help="ID del caso (formato: CASO-XXX o CASE-YYYYMMDD-ORG-INCIDENT)"
 )
 @click.option(
     "--examiner", "-e", 
@@ -116,7 +116,7 @@ def init_case(
                 examiner=examiner,
                 organization=org,
                 description=description or f"Caso forense {case}",
-                timezone=timezone
+                timezone_str=timezone
             )
             
             progress.update(task, description="Creando estructura de directorios...")

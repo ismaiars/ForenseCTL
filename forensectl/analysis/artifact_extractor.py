@@ -708,8 +708,10 @@ class ArtifactExtractor:
         dest_hive = output_dir / f"{hive_name}.hive"
         shutil.copy2(hive_file, dest_hive)
         
-        # TODO: Implementar parseo del registro según el formato
-        # Por ahora, solo copiar el archivo
+        # Parsear registro según el formato solicitado
+        parsed_data = None
+        if export_format in ["json", "csv", "txt"]:
+            parsed_data = self._parse_registry_hive(dest_hive, export_format, output_dir)
         
         return {
             "hive_name": hive_name,
@@ -906,3 +908,146 @@ class ArtifactExtractor:
                     f.write(f"Error: {artifact.get('error', 'Desconocido')}\n")
         
         logger.info(f"Índice de artefactos generado: {index_file}")
+    
+    def _parse_registry_hive(self, hive_file: Path, export_format: str, output_dir: Path) -> Optional[Dict[str, Any]]:
+        """Parsear hive del registro y exportar en el formato especificado.
+        
+        Args:
+            hive_file: Archivo del hive
+            export_format: Formato de exportación
+            output_dir: Directorio de salida
+            
+        Returns:
+            Información del parseo
+        """
+        try:
+            import subprocess
+            import json
+            import csv
+            
+            hive_name = hive_file.stem
+            
+            # Usar reglookup para parsear el hive (si está disponible)
+            try:
+                # Intentar con reglookup
+                result = subprocess.run(
+                    ["reglookup", "-p", str(hive_file)],
+                    capture_output=True,
+                    text=True,
+                    timeout=300
+                )
+                
+                if result.returncode == 0:
+                    registry_data = self._parse_reglookup_output(result.stdout)
+                else:
+                    # Fallback: parseo básico
+                    registry_data = self._basic_registry_parse(hive_file)
+                    
+            except (FileNotFoundError, subprocess.TimeoutExpired):
+                # reglookup no disponible, usar parseo básico
+                registry_data = self._basic_registry_parse(hive_file)
+            
+            if not registry_data:
+                return None
+            
+            # Exportar según el formato
+            if export_format == "json":
+                output_file = output_dir / f"{hive_name}_parsed.json"
+                with open(output_file, "w", encoding="utf-8") as f:
+                    json.dump(registry_data, f, indent=2, ensure_ascii=False)
+                    
+            elif export_format == "csv":
+                output_file = output_dir / f"{hive_name}_parsed.csv"
+                with open(output_file, "w", newline="", encoding="utf-8") as f:
+                    writer = csv.writer(f)
+                    writer.writerow(["Key Path", "Value Name", "Value Type", "Value Data", "Last Modified"])
+                    
+                    for entry in registry_data.get("entries", []):
+                        writer.writerow([
+                            entry.get("key_path", ""),
+                            entry.get("value_name", ""),
+                            entry.get("value_type", ""),
+                            entry.get("value_data", ""),
+                            entry.get("last_modified", "")
+                        ])
+                        
+            elif export_format == "txt":
+                output_file = output_dir / f"{hive_name}_parsed.txt"
+                with open(output_file, "w", encoding="utf-8") as f:
+                    f.write(f"Registry Hive: {hive_name}\n")
+                    f.write(f"Parsed on: {datetime.now().isoformat()}\n")
+                    f.write(f"Total entries: {len(registry_data.get('entries', []))}\n\n")
+                    
+                    for entry in registry_data.get("entries", []):
+                        f.write(f"Key: {entry.get('key_path', '')}\n")
+                        f.write(f"  Value: {entry.get('value_name', '')}\n")
+                        f.write(f"  Type: {entry.get('value_type', '')}\n")
+                        f.write(f"  Data: {entry.get('value_data', '')}\n")
+                        f.write(f"  Modified: {entry.get('last_modified', '')}\n\n")
+            
+            return {
+                "status": "success",
+                "output_file": str(output_file),
+                "entries_count": len(registry_data.get("entries", [])),
+                "format": export_format
+            }
+            
+        except Exception as e:
+            logger.error(f"Error parseando hive del registro: {e}")
+            return {
+                "status": "error",
+                "error": str(e)
+            }
+    
+    def _parse_reglookup_output(self, output: str) -> Dict[str, Any]:
+        """Parsear salida de reglookup.
+        
+        Args:
+            output: Salida del comando reglookup
+            
+        Returns:
+            Datos parseados del registro
+        """
+        entries = []
+        
+        for line in output.split('\n'):
+            if line.strip() and not line.startswith('#'):
+                parts = line.split(',', 4)  # Máximo 5 campos
+                if len(parts) >= 4:
+                    entry = {
+                        "key_path": parts[0].strip(),
+                        "value_name": parts[1].strip(),
+                        "value_type": parts[2].strip(),
+                        "value_data": parts[3].strip(),
+                        "last_modified": parts[4].strip() if len(parts) > 4 else ""
+                    }
+                    entries.append(entry)
+        
+        return {
+            "tool": "reglookup",
+            "entries": entries
+        }
+    
+    def _basic_registry_parse(self, hive_file: Path) -> Dict[str, Any]:
+        """Parseo básico del hive del registro.
+        
+        Args:
+            hive_file: Archivo del hive
+            
+        Returns:
+            Datos básicos del registro
+        """
+        # Parseo muy básico - solo información del archivo
+        stat_info = hive_file.stat()
+        
+        return {
+            "tool": "basic_parser",
+            "hive_info": {
+                "file_name": hive_file.name,
+                "file_size": stat_info.st_size,
+                "created_time": datetime.fromtimestamp(stat_info.st_ctime).isoformat(),
+                "modified_time": datetime.fromtimestamp(stat_info.st_mtime).isoformat()
+            },
+            "entries": [],
+            "note": "Basic parsing only - install reglookup for detailed analysis"
+        }

@@ -641,34 +641,76 @@ class TimelineBuilder:
         Returns:
             Estadísticas del timeline
         """
+        stats = {
+            "total_events": 0,
+            "unique_sources": 0,
+            "date_range": {},
+            "event_types": {},
+            "source_breakdown": {},
+            "hourly_distribution": {},
+            "daily_distribution": {},
+            "file_size": 0
+        }
+        
         try:
-            # Obtener información básica
+            # Obtener información básica del archivo plaso
+            if plaso_file.exists():
+                stats["file_size"] = plaso_file.stat().st_size
+            
+            # Usar pinfo para obtener estadísticas
             info_result = self.get_timeline_info(plaso_file)
             
             if info_result["status"] == "success":
-                stats = info_result["info"]
+                info_data = info_result.get("info", {})
                 
-                # Guardar estadísticas
-                stats_file = output_dir / "timeline_statistics.json"
-                with open(stats_file, "w", encoding="utf-8") as f:
-                    json.dump(stats, f, indent=2, ensure_ascii=False)
+                # Extraer estadísticas básicas
+                if "storage_information" in info_data:
+                    storage_info = info_data["storage_information"]
+                    stats["total_events"] = int(storage_info.get("number_of_events", 0))
                 
-                return {
-                    "success": True,
-                    "stats": stats,
-                    "stats_file": str(stats_file)
-                }
-            else:
-                return {
-                    "success": False,
-                    "error": info_result.get("error", "Error desconocido")
-                }
+                # Extraer información de fuentes
+                if "sources" in info_data:
+                    sources_info = info_data["sources"]
+                    stats["unique_sources"] = len(sources_info)
+                    
+                    # Contar eventos por fuente
+                    for source, source_data in sources_info.items():
+                        if isinstance(source_data, dict) and "events" in source_data:
+                            stats["source_breakdown"][source] = int(source_data["events"])
                 
+                # Extraer rango de fechas
+                if "timeline_information" in info_data:
+                    timeline_info = info_data["timeline_information"]
+                    stats["date_range"] = {
+                        "start_date": timeline_info.get("first_event_timestamp"),
+                        "end_date": timeline_info.get("last_event_timestamp")
+                    }
+            
+            # Generar estadísticas adicionales si tenemos un timeline CSV
+            csv_timeline = output_dir / "timeline.csv"
+            if csv_timeline.exists():
+                additional_stats = self._analyze_csv_timeline(csv_timeline)
+                stats.update(additional_stats)
+            
+            # Guardar estadísticas
+            stats_file = output_dir / "timeline_statistics.json"
+            with open(stats_file, "w", encoding="utf-8") as f:
+                json.dump(stats, f, indent=2, ensure_ascii=False)
+            
+            logger.info(f"Estadísticas de timeline generadas: {stats['total_events']} eventos")
+            
+            return {
+                "success": True,
+                "stats": stats,
+                "stats_file": str(stats_file)
+            }
+            
         except Exception as e:
             logger.error(f"Error analizando estadísticas del timeline: {e}")
             return {
                 "success": False,
-                "error": str(e)
+                "error": str(e),
+                "stats": stats
             }
     
     def _parse_log2timeline_stats(self, stderr_output: str) -> Dict[str, Any]:
@@ -757,6 +799,68 @@ class TimelineBuilder:
                 info[key.strip().lower().replace(" ", "_")] = value.strip()
         
         return info
+    
+    def _analyze_csv_timeline(self, csv_file: Path) -> Dict[str, Any]:
+        """Analizar timeline CSV para estadísticas adicionales.
+        
+        Args:
+            csv_file: Archivo CSV del timeline
+            
+        Returns:
+            Estadísticas adicionales
+        """
+        additional_stats = {
+            "hourly_distribution": {},
+            "daily_distribution": {},
+            "event_types": {},
+            "top_sources": []
+        }
+        
+        try:
+            import csv
+            from collections import Counter
+            
+            event_types = Counter()
+            hourly_dist = Counter()
+            daily_dist = Counter()
+            sources = Counter()
+            
+            with open(csv_file, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                
+                for row in reader:
+                    # Analizar tipos de eventos
+                    if 'message_type' in row:
+                        event_types[row['message_type']] += 1
+                    
+                    # Analizar distribución temporal
+                    if 'datetime' in row:
+                        try:
+                            dt_str = row['datetime']
+                            # Extraer hora y día
+                            if ' ' in dt_str:
+                                date_part, time_part = dt_str.split(' ', 1)
+                                if ':' in time_part:
+                                    hour = time_part.split(':')[0]
+                                    hourly_dist[hour] += 1
+                                daily_dist[date_part] += 1
+                        except:
+                            pass
+                    
+                    # Analizar fuentes
+                    if 'source' in row:
+                        sources[row['source']] += 1
+            
+            # Convertir a diccionarios
+            additional_stats["event_types"] = dict(event_types.most_common(20))
+            additional_stats["hourly_distribution"] = dict(hourly_dist)
+            additional_stats["daily_distribution"] = dict(daily_dist)
+            additional_stats["top_sources"] = list(sources.most_common(10))
+            
+        except Exception as e:
+            logger.warning(f"Error analizando CSV timeline: {e}")
+        
+        return additional_stats
     
     def _get_plaso_version(self) -> str:
         """Obtener versión de plaso.

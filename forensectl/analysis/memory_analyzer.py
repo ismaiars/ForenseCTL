@@ -601,6 +601,355 @@ class MemoryAnalyzer:
         except Exception:
             return "unknown"
     
+    def extract_registry_data(self, dump_path: Union[str, Path]) -> Dict[str, Any]:
+        """Extraer datos del registro de Windows del dump de memoria.
+        
+        Args:
+            dump_path: Ruta del dump de memoria
+            
+        Returns:
+            Datos del registro extraídos
+        """
+        profile = self._detect_profile(dump_path)
+        
+        if not profile.startswith("windows"):
+            raise ValueError(f"Extracción de registro solo soportada para Windows, perfil: {profile}")
+        
+        registry_data = {
+            "hives": [],
+            "keys": [],
+            "values": [],
+            "summary": {
+                "total_hives": 0,
+                "total_keys": 0,
+                "total_values": 0
+            }
+        }
+        
+        try:
+            # Listar hives del registro
+            hivelist_result = self.run_single_plugin(dump_path, "windows.registry.hivelist", "json")
+            
+            if "output_data" in hivelist_result:
+                for hive in hivelist_result["output_data"]:
+                    registry_data["hives"].append({
+                        "offset": hive.get("Offset"),
+                        "name": hive.get("Name"),
+                        "file_full_path": hive.get("FileFullPath")
+                    })
+                
+                registry_data["summary"]["total_hives"] = len(registry_data["hives"])
+            
+            # Extraer claves importantes del registro
+            important_keys = [
+                "windows.registry.printkey --key \"Microsoft\\Windows\\CurrentVersion\\Run\"",
+                "windows.registry.printkey --key \"Microsoft\\Windows\\CurrentVersion\\RunOnce\"",
+                "windows.registry.printkey --key \"Microsoft\\Windows NT\\CurrentVersion\""
+            ]
+            
+            for key_cmd in important_keys:
+                try:
+                    key_result = self.run_single_plugin(dump_path, key_cmd.split()[0], "json")
+                    if "output_data" in key_result:
+                        registry_data["keys"].extend(key_result["output_data"])
+                except Exception as e:
+                    logger.warning(f"Error extrayendo clave del registro: {e}")
+            
+            registry_data["summary"]["total_keys"] = len(registry_data["keys"])
+            
+        except Exception as e:
+            logger.error(f"Error extrayendo datos del registro: {e}")
+            registry_data["error"] = str(e)
+        
+        return registry_data
+    
+    def extract_files_from_memory(self, dump_path: Union[str, Path], output_dir: Optional[Path] = None) -> Dict[str, Any]:
+        """Extraer archivos del dump de memoria.
+        
+        Args:
+            dump_path: Ruta del dump de memoria
+            output_dir: Directorio de salida para archivos extraídos
+            
+        Returns:
+            Información sobre archivos extraídos
+        """
+        if output_dir is None:
+            output_dir = self.analysis_dir / f"extracted_files_{uuid.uuid4().hex[:8]}"
+        
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        profile = self._detect_profile(dump_path)
+        
+        if not profile.startswith("windows"):
+            raise ValueError(f"Extracción de archivos solo soportada para Windows, perfil: {profile}")
+        
+        extraction_data = {
+            "files_found": [],
+            "files_extracted": [],
+            "extraction_errors": [],
+            "summary": {
+                "total_files_found": 0,
+                "total_files_extracted": 0,
+                "total_errors": 0,
+                "extraction_directory": str(output_dir)
+            }
+        }
+        
+        try:
+            # Escanear archivos en memoria
+            filescan_result = self.run_single_plugin(dump_path, "windows.filescan", "json")
+            
+            if "output_data" in filescan_result:
+                for file_info in filescan_result["output_data"]:
+                    file_data = {
+                        "offset": file_info.get("Offset"),
+                        "name": file_info.get("Name"),
+                        "size": file_info.get("Size")
+                    }
+                    extraction_data["files_found"].append(file_data)
+                
+                extraction_data["summary"]["total_files_found"] = len(extraction_data["files_found"])
+                
+                # Extraer archivos específicos (limitado a archivos pequeños por rendimiento)
+                interesting_extensions = [".exe", ".dll", ".bat", ".cmd", ".ps1", ".vbs", ".js"]
+                
+                for file_info in extraction_data["files_found"][:50]:  # Limitar a 50 archivos
+                    file_name = file_info.get("name", "")
+                    file_size = file_info.get("size", 0)
+                    
+                    # Solo extraer archivos pequeños e interesantes
+                    if (any(file_name.lower().endswith(ext) for ext in interesting_extensions) and 
+                        file_size and file_size < 1024 * 1024):  # < 1MB
+                        
+                        try:
+                            offset = file_info.get("offset")
+                            if offset:
+                                # Usar dumpfiles para extraer
+                                extract_result = self._extract_file_by_offset(dump_path, offset, output_dir)
+                                if extract_result["success"]:
+                                    extraction_data["files_extracted"].append({
+                                        "original_name": file_name,
+                                        "extracted_path": extract_result["extracted_path"],
+                                        "offset": offset,
+                                        "size": file_size
+                                    })
+                                else:
+                                    extraction_data["extraction_errors"].append({
+                                        "file_name": file_name,
+                                        "offset": offset,
+                                        "error": extract_result["error"]
+                                    })
+                        except Exception as e:
+                            extraction_data["extraction_errors"].append({
+                                "file_name": file_name,
+                                "error": str(e)
+                            })
+                
+                extraction_data["summary"]["total_files_extracted"] = len(extraction_data["files_extracted"])
+                extraction_data["summary"]["total_errors"] = len(extraction_data["extraction_errors"])
+            
+        except Exception as e:
+            logger.error(f"Error extrayendo archivos de memoria: {e}")
+            extraction_data["error"] = str(e)
+        
+        return extraction_data
+    
+    def analyze_process_memory(self, dump_path: Union[str, Path], pid: int) -> Dict[str, Any]:
+        """Analizar memoria específica de un proceso.
+        
+        Args:
+            dump_path: Ruta del dump de memoria
+            pid: ID del proceso a analizar
+            
+        Returns:
+            Análisis detallado del proceso
+        """
+        profile = self._detect_profile(dump_path)
+        
+        if not profile.startswith("windows"):
+            raise ValueError(f"Análisis de proceso solo soportado para Windows, perfil: {profile}")
+        
+        process_analysis = {
+            "pid": pid,
+            "process_info": {},
+            "memory_sections": [],
+            "handles": [],
+            "dlls": [],
+            "command_line": "",
+            "environment_variables": [],
+            "suspicious_indicators": [],
+            "summary": {
+                "total_memory_sections": 0,
+                "total_handles": 0,
+                "total_dlls": 0,
+                "risk_level": "low"
+            }
+        }
+        
+        try:
+            # Información básica del proceso
+            pslist_result = self.run_single_plugin(dump_path, "windows.pslist", "json")
+            
+            if "output_data" in pslist_result:
+                for process in pslist_result["output_data"]:
+                    if process.get("PID") == pid:
+                        process_analysis["process_info"] = {
+                            "name": process.get("ImageFileName"),
+                            "ppid": process.get("PPID"),
+                            "threads": process.get("Threads"),
+                            "handles": process.get("Handles"),
+                            "session_id": process.get("SessionId"),
+                            "wow64": process.get("Wow64"),
+                            "create_time": process.get("CreateTime"),
+                            "exit_time": process.get("ExitTime")
+                        }
+                        break
+            
+            # Línea de comandos
+            try:
+                cmdline_result = self.run_single_plugin(dump_path, "windows.cmdline", "json")
+                if "output_data" in cmdline_result:
+                    for cmd_info in cmdline_result["output_data"]:
+                        if cmd_info.get("PID") == pid:
+                            process_analysis["command_line"] = cmd_info.get("Args", "")
+                            break
+            except Exception as e:
+                logger.warning(f"Error obteniendo línea de comandos para PID {pid}: {e}")
+            
+            # Variables de entorno
+            try:
+                envars_result = self.run_single_plugin(dump_path, "windows.envars", "json")
+                if "output_data" in envars_result:
+                    for env_info in envars_result["output_data"]:
+                        if env_info.get("PID") == pid:
+                            process_analysis["environment_variables"].append({
+                                "variable": env_info.get("Variable"),
+                                "value": env_info.get("Value")
+                            })
+            except Exception as e:
+                logger.warning(f"Error obteniendo variables de entorno para PID {pid}: {e}")
+            
+            # DLLs cargadas
+            try:
+                dlllist_result = self.run_single_plugin(dump_path, "windows.dlllist", "json")
+                if "output_data" in dlllist_result:
+                    for dll_info in dlllist_result["output_data"]:
+                        if dll_info.get("PID") == pid:
+                            process_analysis["dlls"].append({
+                                "base": dll_info.get("Base"),
+                                "size": dll_info.get("Size"),
+                                "name": dll_info.get("Name"),
+                                "path": dll_info.get("Path")
+                            })
+                
+                process_analysis["summary"]["total_dlls"] = len(process_analysis["dlls"])
+            except Exception as e:
+                logger.warning(f"Error obteniendo DLLs para PID {pid}: {e}")
+            
+            # Handles
+            try:
+                handles_result = self.run_single_plugin(dump_path, "windows.handles", "json")
+                if "output_data" in handles_result:
+                    for handle_info in handles_result["output_data"]:
+                        if handle_info.get("PID") == pid:
+                            process_analysis["handles"].append({
+                                "offset": handle_info.get("Offset"),
+                                "handle_value": handle_info.get("HandleValue"),
+                                "granted_access": handle_info.get("GrantedAccess"),
+                                "type": handle_info.get("Type"),
+                                "details": handle_info.get("Details")
+                            })
+                
+                process_analysis["summary"]["total_handles"] = len(process_analysis["handles"])
+            except Exception as e:
+                logger.warning(f"Error obteniendo handles para PID {pid}: {e}")
+            
+            # Análisis de indicadores sospechosos
+            suspicious_count = 0
+            
+            # Verificar si el proceso tiene DLLs sospechosas
+            suspicious_dlls = ["injected", "unknown", "temp", "appdata"]
+            for dll in process_analysis["dlls"]:
+                dll_path = dll.get("path", "").lower()
+                if any(susp in dll_path for susp in suspicious_dlls):
+                    process_analysis["suspicious_indicators"].append({
+                        "type": "suspicious_dll",
+                        "description": f"DLL sospechosa: {dll.get('name')}",
+                        "details": dll
+                    })
+                    suspicious_count += 1
+            
+            # Verificar handles sospechosos
+            suspicious_handles = ["mutant", "event", "section"]
+            for handle in process_analysis["handles"]:
+                handle_type = handle.get("type", "").lower()
+                if handle_type in suspicious_handles:
+                    process_analysis["suspicious_indicators"].append({
+                        "type": "suspicious_handle",
+                        "description": f"Handle sospechoso: {handle_type}",
+                        "details": handle
+                    })
+                    suspicious_count += 1
+            
+            # Calcular nivel de riesgo
+            if suspicious_count == 0:
+                process_analysis["summary"]["risk_level"] = "low"
+            elif suspicious_count <= 3:
+                process_analysis["summary"]["risk_level"] = "medium"
+            else:
+                process_analysis["summary"]["risk_level"] = "high"
+            
+        except Exception as e:
+            logger.error(f"Error analizando proceso {pid}: {e}")
+            process_analysis["error"] = str(e)
+        
+        return process_analysis
+    
+    def _extract_file_by_offset(self, dump_path: Path, offset: str, output_dir: Path) -> Dict[str, Any]:
+        """Extraer archivo por offset usando dumpfiles.
+        
+        Args:
+            dump_path: Ruta del dump
+            offset: Offset del archivo
+            output_dir: Directorio de salida
+            
+        Returns:
+            Resultado de la extracción
+        """
+        try:
+            cmd = [self.volatility_cmd, "-f", str(dump_path), "windows.dumpfiles", "--virtaddr", offset]
+            
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                timeout=60,
+                cwd=output_dir
+            )
+            
+            if result.returncode == 0:
+                # Buscar archivo extraído
+                extracted_files = list(output_dir.glob(f"*{offset}*"))
+                if extracted_files:
+                    return {
+                        "success": True,
+                        "extracted_path": str(extracted_files[0]),
+                        "offset": offset
+                    }
+            
+            return {
+                "success": False,
+                "error": f"No se pudo extraer archivo en offset {offset}",
+                "stderr": result.stderr
+            }
+            
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e),
+                "offset": offset
+            }
+    
     def _generate_results_summary(self, results: Dict[str, Any]) -> Dict[str, Any]:
         """Generar resumen de resultados.
         

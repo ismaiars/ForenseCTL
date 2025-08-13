@@ -109,7 +109,7 @@ class ReportGenerator:
         
         try:
             # Obtener información del caso
-            case_info = self.case_manager.get_case(self.case_id)
+            case_info = self.case_manager.get_case_info(self.case_id)
             if not case_info:
                 raise ValueError(f"Caso no encontrado: {self.case_id}")
             
@@ -179,7 +179,7 @@ class ReportGenerator:
             self.manifest.register_report(
                 report_id=report_id,
                 report_type=report_type,
-                output_format=output_format,
+                report_format=output_format,
                 output_path=str(output_file),
                 examiner=self.examiner,
                 description=f"Reporte {report_type} en formato {output_format}",
@@ -369,11 +369,11 @@ class ReportGenerator:
         report_data["manifest_summary"] = manifest_summary
         
         # Obtener evidencias
-        evidences = self.manifest.get_evidences()
+        evidences = self.manifest.get_evidence_list()
         report_data["evidences"] = evidences
         
         # Obtener análisis realizados
-        analyses = self.manifest.get_analyses()
+        analyses = self.manifest.get_analysis_list()
         report_data["analyses"] = analyses
         
         # Obtener cadena de custodia
@@ -381,7 +381,7 @@ class ReportGenerator:
         report_data["chain_of_custody"] = chain_entries
         
         # Obtener verificaciones de integridad
-        integrity_checks = self.manifest.get_integrity_verifications()
+        integrity_checks = self.manifest.get_integrity_checks()
         report_data["integrity_checks"] = integrity_checks
         
         # Datos específicos según el tipo de reporte
@@ -431,6 +431,9 @@ class ReportGenerator:
             if artifacts_dir.exists():
                 technical_data["artifacts_analysis"] = self._collect_artifacts_data(artifacts_dir)
         
+        # Incluir datos del análisis forense completo del sistema real
+        technical_data.update(self._collect_real_system_data())
+        
         return technical_data
     
     def _collect_executive_data(self) -> Dict[str, Any]:
@@ -447,6 +450,309 @@ class ReportGenerator:
         }
         
         return executive_data
+    
+    def _collect_real_system_data(self) -> Dict[str, Any]:
+        """Recopilar datos del análisis forense completo del sistema real.
+        
+        Returns:
+            Datos del sistema real para el reporte
+        """
+        real_system_data = {}
+        
+        try:
+            # Buscar archivos de análisis completo del sistema
+            analysis_files = list(self.case_dir.glob("**/analisis_completo_*.json"))
+            
+            if not analysis_files:
+                # Si no hay archivos en el caso, buscar en el directorio raíz
+                root_dir = Path.cwd()
+                analysis_files = list(root_dir.glob("**/analisis_completo_*.json"))
+            
+            if analysis_files:
+                # Usar el archivo más reciente
+                latest_file = max(analysis_files, key=lambda f: f.stat().st_mtime)
+                
+                with open(latest_file, 'r', encoding='utf-8') as f:
+                    comprehensive_data = json.load(f)
+                
+                # Estructurar datos para el reporte
+                real_system_data = {
+                    "system_information": {
+                        "hostname": comprehensive_data.get("system_info", {}).get("hostname", "N/A"),
+                        "operating_system": comprehensive_data.get("system_info", {}).get("os", "N/A"),
+                        "architecture": comprehensive_data.get("system_info", {}).get("architecture", "N/A"),
+                        "current_user": comprehensive_data.get("system_info", {}).get("current_user", "N/A"),
+                        "analysis_timestamp": comprehensive_data.get("timestamp", "N/A")
+                    },
+                    "timeline_events": {
+                        "total_events": len(comprehensive_data.get("timeline_events", [])),
+                        "events_detail": comprehensive_data.get("timeline_events", []),
+                        "event_types": self._categorize_timeline_events(comprehensive_data.get("timeline_events", []))
+                    },
+                    "system_artifacts": {
+                        "registry_keys": {
+                            "total_count": len(comprehensive_data.get("system_artifacts", {}).get("registry_keys", [])),
+                            "details": comprehensive_data.get("system_artifacts", {}).get("registry_keys", [])
+                        },
+                        "browser_artifacts": {
+                            "total_count": len(comprehensive_data.get("system_artifacts", {}).get("browser_artifacts", [])),
+                            "details": comprehensive_data.get("system_artifacts", {}).get("browser_artifacts", [])
+                        },
+                        "system_artifacts_files": {
+                            "total_count": len(comprehensive_data.get("system_artifacts", {}).get("system_artifacts", [])),
+                            "details": comprehensive_data.get("system_artifacts", {}).get("system_artifacts", [])
+                        },
+                        "running_processes": {
+                            "total_count": len(comprehensive_data.get("system_artifacts", {}).get("running_processes", [])),
+                            "top_processes": comprehensive_data.get("system_artifacts", {}).get("running_processes", [])[:10],
+                            "all_processes": comprehensive_data.get("system_artifacts", {}).get("running_processes", [])
+                        },
+                        "network_information": comprehensive_data.get("system_artifacts", {}).get("network_information", [])
+                    },
+                    "security_analysis": {
+                        "risk_level": comprehensive_data.get("security_analysis", {}).get("risk_level", "UNKNOWN"),
+                        "security_score": comprehensive_data.get("security_analysis", {}).get("security_score", 0),
+                        "vulnerabilities": {
+                            "count": len(comprehensive_data.get("security_analysis", {}).get("vulnerabilities", [])),
+                            "details": comprehensive_data.get("security_analysis", {}).get("vulnerabilities", [])
+                        },
+                        "threats": {
+                            "count": len(comprehensive_data.get("security_analysis", {}).get("threats", [])),
+                            "details": comprehensive_data.get("security_analysis", {}).get("threats", [])
+                        },
+                        "recommendations": comprehensive_data.get("security_analysis", {}).get("recommendations", [])
+                    },
+                    "forensic_artifacts": {
+                        "event_logs": {
+                            "total_count": len(comprehensive_data.get("event_logs", [])),
+                            "details": comprehensive_data.get("event_logs", []),
+                            "summary": self._summarize_event_logs(comprehensive_data.get("event_logs", []))
+                        },
+                        "prefetch_files": {
+                            "total_count": len(comprehensive_data.get("prefetch_files", [])),
+                            "details": comprehensive_data.get("prefetch_files", [])
+                        },
+                        "browser_history": {
+                            "databases_found": len(comprehensive_data.get("browser_history", [])),
+                            "details": comprehensive_data.get("browser_history", [])
+                        },
+                        "usb_devices": {
+                            "total_count": len(comprehensive_data.get("usb_device_history", [])),
+                            "details": comprehensive_data.get("usb_device_history", []),
+                            "device_summary": self._summarize_usb_devices(comprehensive_data.get("usb_device_history", []))
+                        },
+                        "startup_programs": {
+                            "total_count": len(comprehensive_data.get("startup_programs", [])),
+                            "details": comprehensive_data.get("startup_programs", [])
+                        },
+                        "installed_software": {
+                            "total_count": len(comprehensive_data.get("installed_software", [])),
+                            "details": comprehensive_data.get("installed_software", []),
+                            "software_categories": self._categorize_software(comprehensive_data.get("installed_software", []))
+                        }
+                    },
+                    "analysis_metadata": {
+                        "source_file": str(latest_file),
+                        "file_size": latest_file.stat().st_size,
+                        "analysis_completeness": self._assess_analysis_completeness(comprehensive_data)
+                    }
+                }
+                
+                logger.info(f"Datos del sistema real recopilados desde: {latest_file}")
+            else:
+                logger.warning("No se encontraron archivos de análisis completo del sistema")
+                real_system_data = {
+                    "error": "No se encontraron datos de análisis forense completo del sistema",
+                    "suggestion": "Ejecute el análisis forense completo desde el menú principal"
+                }
+                
+        except Exception as e:
+            logger.error(f"Error recopilando datos del sistema real: {e}")
+            real_system_data = {
+                "error": f"Error al recopilar datos: {str(e)}",
+                "timestamp": datetime.now(timezone.utc).isoformat()
+            }
+        
+        return real_system_data
+    
+    def _categorize_timeline_events(self, events: List[Dict]) -> Dict[str, int]:
+        """Categorizar eventos del timeline por tipo.
+        
+        Args:
+            events: Lista de eventos del timeline
+            
+        Returns:
+            Diccionario con conteo por categoría
+        """
+        categories = {}
+        for event in events:
+            event_type = event.get("type", "unknown")
+            categories[event_type] = categories.get(event_type, 0) + 1
+        return categories
+    
+    def _summarize_event_logs(self, event_logs: List[Dict]) -> Dict[str, Any]:
+        """Resumir información de logs de eventos.
+        
+        Args:
+            event_logs: Lista de logs de eventos
+            
+        Returns:
+            Resumen de logs de eventos
+        """
+        if not event_logs:
+            return {"total_size": 0, "largest_log": None, "categories": {}}
+        
+        total_size = sum(log.get("size", 0) for log in event_logs)
+        largest_log = max(event_logs, key=lambda x: x.get("size", 0))
+        
+        # Categorizar por tipo de log
+        categories = {}
+        for log in event_logs:
+            log_name = log.get("name", "unknown")
+            if "Application" in log_name:
+                categories["Application"] = categories.get("Application", 0) + 1
+            elif "System" in log_name:
+                categories["System"] = categories.get("System", 0) + 1
+            elif "Security" in log_name:
+                categories["Security"] = categories.get("Security", 0) + 1
+            else:
+                categories["Other"] = categories.get("Other", 0) + 1
+        
+        return {
+            "total_size": total_size,
+            "largest_log": largest_log,
+            "categories": categories
+        }
+    
+    def _summarize_usb_devices(self, usb_devices: List[Dict]) -> Dict[str, Any]:
+        """Resumir información de dispositivos USB.
+        
+        Args:
+            usb_devices: Lista de dispositivos USB
+            
+        Returns:
+            Resumen de dispositivos USB
+        """
+        if not usb_devices:
+            return {"unique_devices": 0, "device_types": {}, "vendors": {}}
+        
+        unique_devices = set()
+        device_types = {}
+        vendors = {}
+        
+        for device in usb_devices:
+            device_id = device.get("device_id", "unknown")
+            unique_devices.add(device_id)
+            
+            device_type = device.get("type", "unknown")
+            device_types[device_type] = device_types.get(device_type, 0) + 1
+            
+            vendor = device.get("vendor", "unknown")
+            vendors[vendor] = vendors.get(vendor, 0) + 1
+        
+        return {
+            "unique_devices": len(unique_devices),
+            "device_types": device_types,
+            "vendors": vendors
+        }
+    
+    def _categorize_software(self, software_list: List[Dict]) -> Dict[str, int]:
+        """Categorizar software instalado por tipo.
+        
+        Args:
+            software_list: Lista de software instalado
+            
+        Returns:
+            Diccionario con conteo por categoría
+        """
+        categories = {
+            "Development": 0,
+            "Security": 0,
+            "System": 0,
+            "Media": 0,
+            "Office": 0,
+            "Games": 0,
+            "Other": 0
+        }
+        
+        development_keywords = ["visual", "studio", "git", "python", "node", "docker", "code", "dev"]
+        security_keywords = ["antivirus", "firewall", "security", "defender", "malware"]
+        system_keywords = ["driver", "runtime", "framework", "redistributable", "update"]
+        media_keywords = ["player", "codec", "media", "video", "audio", "photo"]
+        office_keywords = ["office", "word", "excel", "powerpoint", "pdf", "reader"]
+        game_keywords = ["game", "steam", "epic", "origin", "uplay"]
+        
+        for software in software_list:
+            name = software.get("name", "").lower()
+            
+            if any(keyword in name for keyword in development_keywords):
+                categories["Development"] += 1
+            elif any(keyword in name for keyword in security_keywords):
+                categories["Security"] += 1
+            elif any(keyword in name for keyword in system_keywords):
+                categories["System"] += 1
+            elif any(keyword in name for keyword in media_keywords):
+                categories["Media"] += 1
+            elif any(keyword in name for keyword in office_keywords):
+                categories["Office"] += 1
+            elif any(keyword in name for keyword in game_keywords):
+                categories["Games"] += 1
+            else:
+                categories["Other"] += 1
+        
+        return categories
+    
+    def _assess_analysis_completeness(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Evaluar la completitud del análisis forense.
+        
+        Args:
+            data: Datos del análisis completo
+            
+        Returns:
+            Evaluación de completitud
+        """
+        completeness = {
+            "overall_score": 0,
+            "components": {},
+            "missing_components": [],
+            "recommendations": []
+        }
+        
+        # Evaluar componentes
+        components = {
+            "system_info": data.get("system_info", {}),
+            "timeline_events": data.get("timeline_events", []),
+            "system_artifacts": data.get("system_artifacts", {}),
+            "security_analysis": data.get("security_analysis", {}),
+            "event_logs": data.get("event_logs", []),
+            "browser_history": data.get("browser_history", []),
+            "usb_device_history": data.get("usb_device_history", []),
+            "startup_programs": data.get("startup_programs", []),
+            "installed_software": data.get("installed_software", [])
+        }
+        
+        total_components = len(components)
+        complete_components = 0
+        
+        for component, value in components.items():
+            if value:
+                complete_components += 1
+                completeness["components"][component] = "complete"
+            else:
+                completeness["components"][component] = "missing"
+                completeness["missing_components"].append(component)
+        
+        completeness["overall_score"] = (complete_components / total_components) * 100
+        
+        # Generar recomendaciones
+        if completeness["overall_score"] < 80:
+            completeness["recommendations"].append("Ejecutar análisis forense completo nuevamente")
+        if "event_logs" in completeness["missing_components"]:
+            completeness["recommendations"].append("Verificar permisos para acceder a logs de eventos")
+        if "browser_history" in completeness["missing_components"]:
+            completeness["recommendations"].append("Verificar instalación de navegadores")
+        
+        return completeness
     
     def _generate_report_content(
         self,
@@ -475,6 +781,7 @@ class ReportGenerator:
                 "language": language,
                 "detail_level": config["detail_level"]
             },
+            "case_info": report_data.get("case_info", {}),
             "sections": {}
         }
         

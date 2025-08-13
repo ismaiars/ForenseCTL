@@ -1,0 +1,4315 @@
+{
+  "analysis_info": {
+    "timestamp": "2025-08-13T15:34:16.326107",
+    "analyzer": "ForenseCTL Real System Analyzer",
+    "system_info": {
+      "platform": "Windows-11-10.0.26100-SP0",
+      "system": "Windows",
+      "release": "11",
+      "version": "10.0.26100",
+      "machine": "AMD64",
+      "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+      "hostname": "ACER",
+      "username": "ACER-1",
+      "timestamp": "2025-08-13T15:34:16.325891"
+    }
+  },
+  "timeline_events": [
+    {
+      "timestamp": "2025-08-13T15:34:16.326116",
+      "event_type": "analysis_start",
+      "description": "Análisis forense iniciado en ACER",
+      "source": "ForenseCTL Real Analyzer",
+      "details": {
+        "system": "Windows",
+        "release": "11",
+        "username": "ACER-1"
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:34:16.076647",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: python.exe (PID: 39068)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 39068,
+        "name": "python.exe",
+        "username": "ACER\\ACER-1"
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:33:53.042183",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: brave.exe (PID: 36748)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 36748,
+        "name": "brave.exe",
+        "username": "ACER\\ACER-1"
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:33:39.718052",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: powershell.exe (PID: 9260)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 9260,
+        "name": "powershell.exe",
+        "username": "ACER\\ACER-1"
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:33:39.573373",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: conhost.exe (PID: 14296)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 14296,
+        "name": "conhost.exe",
+        "username": "ACER\\ACER-1"
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:32:21.861942",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: python.exe (PID: 32048)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 32048,
+        "name": "python.exe",
+        "username": "ACER\\ACER-1"
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:31:04.991797",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: svchost.exe (PID: 36284)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 36284,
+        "name": "svchost.exe",
+        "username": null
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:26:50.620459",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: svchost.exe (PID: 37816)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 37816,
+        "name": "svchost.exe",
+        "username": null
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:11:31.968570",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: brave.exe (PID: 25672)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 25672,
+        "name": "brave.exe",
+        "username": "ACER\\ACER-1"
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:11:31.703704",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: brave.exe (PID: 38968)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 38968,
+        "name": "brave.exe",
+        "username": "ACER\\ACER-1"
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:11:31.518400",
+      "event_type": "process_start",
+      "description": "Proceso iniciado: brave.exe (PID: 40828)",
+      "source": "System Process Monitor",
+      "details": {
+        "pid": 40828,
+        "name": "brave.exe",
+        "username": "ACER\\ACER-1"
+      }
+    },
+    {
+      "timestamp": "2025-08-13T15:34:18.643019",
+      "event_type": "network_analysis",
+      "description": "Conexiones de red activas detectadas: 52",
+      "source": "Network Monitor",
+      "details": {
+        "total_connections": 52,
+        "sample_connections": [
+          "127.0.0.1:49178 -> 127.0.0.1:51007",
+          "127.0.0.1:51002 -> 127.0.0.1:49186",
+          "127.0.0.1:49669 -> 127.0.0.1:49670",
+          "127.0.0.1:49186 -> 127.0.0.1:51002",
+          "127.0.0.1:51000 -> 127.0.0.1:49180"
+        ]
+      }
+    }
+  ],
+  "system_artifacts": {
+    "registry_keys": [
+      {
+        "key": "HKLM\\Run\\SecurityHealth",
+        "value": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "type": "startup_program"
+      },
+      {
+        "key": "HKLM\\Run\\RtkAudUService",
+        "value": "\"C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_70f88b5e2683307e\\RtkAudUService64.exe\" -background",
+        "type": "startup_program"
+      },
+      {
+        "key": "HKCU\\Run\\OneDrive",
+        "value": "\"C:\\Users\\ACER-1\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background",
+        "type": "startup_program"
+      },
+      {
+        "key": "HKCU\\Run\\EpicGamesLauncher",
+        "value": "\"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe\" -silent -launchcontext=boot",
+        "type": "startup_program"
+      },
+      {
+        "key": "HKCU\\Run\\Docker Desktop",
+        "value": "C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe -Autostart",
+        "type": "startup_program"
+      },
+      {
+        "key": "HKCU\\Run\\SafeConnect",
+        "value": "C:\\Program Files (x86)\\McAfee\\McAfee Safe Connect\\SafeConnect.Entry.exe /StartMinimized",
+        "type": "startup_program"
+      },
+      {
+        "key": "HKCU\\Run\\electron.app.LM Studio",
+        "value": "C:\\Program Files\\LM Studio\\LM Studio.exe --run-as-service",
+        "type": "startup_program"
+      },
+      {
+        "key": "HKCU\\Run\\SIEM-AutoStart",
+        "value": "PowerShell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File \"C:\\Users\\ACER-1\\Documents\\SIEM\\start-siem-user.ps1\"",
+        "type": "startup_program"
+      }
+    ],
+    "browser_artifacts": [
+      "Chrome History encontrado: C:\\Users\\ACER-1\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History",
+      "Firefox Profile encontrado: C:\\Users\\ACER-1\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\dl8gyiq6.default-release",
+      "Edge Data encontrado: C:\\Users\\ACER-1\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default"
+    ],
+    "system_artifacts": [
+      "Event Logs encontrados: 220 archivos .evtx",
+      "Prefetch Files encontrados: 0 archivos .pf",
+      "Recent Documents: 320 archivos .lnk"
+    ],
+    "running_processes": [
+      {
+        "pid": 0,
+        "name": "System Idle Process",
+        "cpu_percent": 0.0,
+        "memory_percent": 4.84992630536979e-05
+      },
+      {
+        "pid": 4,
+        "name": "System",
+        "cpu_percent": 0.0,
+        "memory_percent": 0.06624999333135133
+      },
+      {
+        "pid": 188,
+        "name": "",
+        "cpu_percent": 0.0,
+        "memory_percent": 0.3831441781242134
+      },
+      {
+        "pid": 232,
+        "name": "Registry",
+        "cpu_percent": 0.0,
+        "memory_percent": 0.3969664680945173
+      },
+      {
+        "pid": 388,
+        "name": "RuntimeBroker.exe",
+        "cpu_percent": 0.0,
+        "memory_percent": 0.08353998060999464
+      },
+      {
+        "pid": 696,
+        "name": "smss.exe",
+        "cpu_percent": 0.0,
+        "memory_percent": 0.0016489749438257286
+      },
+      {
+        "pid": 1152,
+        "name": "csrss.exe",
+        "cpu_percent": 0.0,
+        "memory_percent": 0.018744965170254237
+      },
+      {
+        "pid": 1228,
+        "name": "svchost.exe",
+        "cpu_percent": 0.0,
+        "memory_percent": 0.009069362191041506
+      },
+      {
+        "pid": 1236,
+        "name": "wininit.exe",
+        "cpu_percent": 0.0,
+        "memory_percent": 0.009554354821578487
+      },
+      {
+        "pid": 1372,
+        "name": "services.exe",
+        "cpu_percent": 0.0,
+        "memory_percent": 0.05507091319747397
+      }
+    ],
+    "network_info": {
+      "interfaces": [
+        {
+          "interface": "vEthernet (WSL (Hyper-V firewall))",
+          "ip": "172.19.192.1",
+          "netmask": "255.255.240.0"
+        },
+        {
+          "interface": "Conexión de área local",
+          "ip": "169.254.107.127",
+          "netmask": "255.255.0.0"
+        },
+        {
+          "interface": "Conexión de área local* 1",
+          "ip": "169.254.190.240",
+          "netmask": "255.255.0.0"
+        },
+        {
+          "interface": "Conexión de área local* 2",
+          "ip": "169.254.60.23",
+          "netmask": "255.255.0.0"
+        },
+        {
+          "interface": "Wi-Fi",
+          "ip": "192.168.100.49",
+          "netmask": "255.255.255.0"
+        },
+        {
+          "interface": "OpenVPN Data Channel Offload for Surfshark",
+          "ip": "169.254.96.114",
+          "netmask": "255.255.0.0"
+        },
+        {
+          "interface": "Loopback Pseudo-Interface 1",
+          "ip": "127.0.0.1",
+          "netmask": "255.0.0.0"
+        }
+      ],
+      "connections": 50
+    },
+    "disk_info": {
+      "partitions": [
+        {
+          "device": "C:\\",
+          "mountpoint": "C:\\",
+          "fstype": "NTFS",
+          "total_gb": 475.67,
+          "used_gb": 243.26,
+          "free_gb": 232.41,
+          "percent_used": 51.14
+        }
+      ],
+      "usage": {}
+    },
+    "timestamp": "2025-08-13T15:34:18.643114"
+  },
+  "security_analysis": {
+    "threats_detected": [],
+    "vulnerabilities": [
+      "Alto número de conexiones externas: 50",
+      "Alto uso de memoria: 86.3%"
+    ],
+    "risk_level": "MEDIUM",
+    "recommendations": [
+      "Mantener el sistema operativo actualizado",
+      "Usar software antivirus actualizado",
+      "Revisar procesos en ejecución regularmente",
+      "Monitorear conexiones de red activas",
+      "Investigar procesos con alto uso de recursos",
+      "Verificar conexiones de red sospechosas",
+      "Realizar escaneo completo de malware"
+    ],
+    "security_score": 60.0,
+    "system_info": {
+      "platform": "Windows-11-10.0.26100-SP0",
+      "system": "Windows",
+      "release": "11",
+      "version": "10.0.26100",
+      "machine": "AMD64",
+      "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+      "hostname": "ACER",
+      "username": "ACER-1",
+      "timestamp": "2025-08-13T15:34:16.325891"
+    },
+    "timestamp": "2025-08-13T15:34:19.452816"
+  },
+  "event_logs": [
+    {
+      "name": "AirSpaceChannel.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\AirSpaceChannel.evtx",
+      "size_bytes": 1048576,
+      "modified": "2025-07-22T15:36:54.514662",
+      "created": "2025-03-15T22:00:32.085354",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Application.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Application.evtx",
+      "size_bytes": 15798272,
+      "modified": "2025-08-13T15:29:45.951084",
+      "created": "2025-03-15T22:00:52.291582",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Camera_DeviceMFT.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Camera_DeviceMFT.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-04-28T09:45:11.946594",
+      "created": "2025-04-28T09:44:43.725219",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Camera_FrameServer.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Camera_FrameServer.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-06-12T15:11:28.297283",
+      "created": "2025-04-28T09:44:43.741161",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "DebugChannel.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\DebugChannel.evtx",
+      "size_bytes": 4096,
+      "modified": "2025-07-18T09:15:31.948528",
+      "created": "2025-03-15T22:00:32.085354",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "HardwareEvents.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\HardwareEvents.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.541228",
+      "created": "2025-03-15T22:00:52.291582",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Intel-GFX-Info%4Application.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Intel-GFX-Info%4Application.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-14T09:31:56.906769",
+      "created": "2025-03-18T08:25:37.053303",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Intel-GFX-Info%4System.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Intel-GFX-Info%4System.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-21T18:58:15.127947",
+      "created": "2025-03-18T08:25:37.053815",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "IntelAudioServiceLog.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\IntelAudioServiceLog.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.541228",
+      "created": "2025-03-15T22:00:52.291582",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Internet Explorer.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Internet Explorer.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.541228",
+      "created": "2025-03-15T22:00:52.291582",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Key Management Service.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Key Management Service.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.541228",
+      "created": "2025-03-15T22:00:52.291582",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "MF_MediaFoundationDeviceProxy.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\MF_MediaFoundationDeviceProxy.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-06-12T15:11:28.295421",
+      "created": "2025-04-28T09:44:43.773313",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Client-Licensing-Platform%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Client-Licensing-Platform%4Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T13:31:39.996341",
+      "created": "2025-03-15T22:00:52.370837",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-RMS-MSIPC%4Debug.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-RMS-MSIPC%4Debug.evtx",
+      "size_bytes": 61440,
+      "modified": "2025-08-07T12:03:08.771919",
+      "created": "2025-03-15T22:00:32.085354",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AAD%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AAD%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-15T22:10:52.346031",
+      "created": "2025-03-15T22:02:25.925102",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppID%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppID%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:34:09.535508",
+      "created": "2025-03-15T22:03:42.377500",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Application-Experience%4Program-Compatibility-Assistant.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Application-Experience%4Program-Compatibility-Assistant.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T10:24:09.283531",
+      "created": "2025-03-15T22:00:55.416832",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Application-Experience%4Program-Compatibility-Troubleshooter.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Application-Experience%4Program-Compatibility-Troubleshooter.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.660354",
+      "created": "2025-03-15T22:05:10.404978",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Application-Experience%4Program-Inventory.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Application-Experience%4Program-Inventory.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.660354",
+      "created": "2025-03-15T22:05:10.402968",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Application-Experience%4Program-Telemetry.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Application-Experience%4Program-Telemetry.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T10:29:09.323159",
+      "created": "2025-03-15T22:05:10.400959",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Application-Experience%4Steps-Recorder.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Application-Experience%4Steps-Recorder.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.660354",
+      "created": "2025-03-15T22:05:10.404978",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppLocker%4EXE and DLL.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppLocker%4EXE and DLL.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-04-30T11:37:27.462481",
+      "created": "2025-03-15T22:00:53.318888",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppLocker%4MSI and Script.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppLocker%4MSI and Script.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-04-28T09:56:17.337794",
+      "created": "2025-03-15T22:00:53.320895",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppLocker%4Packaged app-Deployment.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppLocker%4Packaged app-Deployment.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.571070",
+      "created": "2025-03-15T22:00:53.324650",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppLocker%4Packaged app-Execution.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppLocker%4Packaged app-Execution.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.571070",
+      "created": "2025-03-15T22:00:53.322902",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppModel-Runtime%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppModel-Runtime%4Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:19:10.316707",
+      "created": "2025-03-15T22:00:52.307278",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppReadiness%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppReadiness%4Admin.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-13T13:29:09.983312",
+      "created": "2025-03-15T22:03:24.375833",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppReadiness%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppReadiness%4Operational.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-13T13:29:09.983312",
+      "created": "2025-03-15T22:03:24.375833",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppXDeployment%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppXDeployment%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T13:26:39.967297",
+      "created": "2025-03-15T22:03:24.407437",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppXDeployment-Server%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppXDeployment-Server%4Operational.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-07-09T15:47:59.321045",
+      "created": "2025-03-15T22:01:43.432089",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppXDeploymentServer%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppXDeploymentServer%4Operational.evtx",
+      "size_bytes": 5246976,
+      "modified": "2025-08-13T15:28:30.440020",
+      "created": "2025-03-15T22:01:40.394612",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppXDeploymentServer%4Restricted.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppXDeploymentServer%4Restricted.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-12T09:23:52.323791",
+      "created": "2025-03-15T22:01:40.394612",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-AppxPackaging%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-AppxPackaging%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:19:10.316707",
+      "created": "2025-03-15T22:01:41.405892",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Audio%4CaptureMonitor.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Audio%4CaptureMonitor.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.571070",
+      "created": "2025-03-15T22:00:53.553202",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Audio%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Audio%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:00:53.531140",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Audio%4PlaybackManager.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Audio%4PlaybackManager.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-12T09:58:52.432356",
+      "created": "2025-03-15T22:00:53.563055",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Authentication User Interface%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Authentication User Interface%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-10T09:02:49.617962",
+      "created": "2025-06-12T09:01:27.690269",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-BackgroundTaskInfrastructure%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-BackgroundTaskInfrastructure%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-12T09:06:22.238199",
+      "created": "2025-03-15T22:05:38.438826",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Biometrics%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Biometrics%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:16:36.483187",
+      "created": "2025-03-15T22:03:30.811929",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Bits-Client%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Bits-Client%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T14:11:40.118677",
+      "created": "2025-03-15T22:02:25.577236",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-CloudFiles-Filter%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-CloudFiles-Filter%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-03-15T22:00:53.404145",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-CloudRestoreLauncher%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-CloudRestoreLauncher%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:05:10.390519",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-CloudStore%4Initialization.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-CloudStore%4Initialization.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:26:36.565862",
+      "created": "2025-03-15T22:03:32.883099",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-CloudStore%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-CloudStore%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T10:09:06.873652",
+      "created": "2025-03-15T22:03:32.883099",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-CodeIntegrity%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-CodeIntegrity%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:34:10.958015",
+      "created": "2025-03-15T22:00:52.430453",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Containers-BindFlt%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Containers-BindFlt%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-03-15T22:00:53.459697",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Containers-Wcifs%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Containers-Wcifs%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-03-15T22:00:53.326661",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Crypto-DPAPI%4BackUpKeySvc.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Crypto-DPAPI%4BackUpKeySvc.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.612803",
+      "created": "2025-03-15T22:03:32.173390",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Crypto-DPAPI%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Crypto-DPAPI%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:31:12.285049",
+      "created": "2025-03-15T22:03:32.125818",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Crypto-NCrypt%4CertInUse.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Crypto-NCrypt%4CertInUse.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.582809",
+      "created": "2025-03-15T22:03:20.781364",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Crypto-NCrypt%4KeyMgmt.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Crypto-NCrypt%4KeyMgmt.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:03:20.781364",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Crypto-NCrypt%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Crypto-NCrypt%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:29:09.512111",
+      "created": "2025-03-15T22:03:20.781364",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:02:25.925102",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Autopilot.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Autopilot.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.612803",
+      "created": "2025-03-15T22:03:32.871762",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Enrollment.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Enrollment.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.628564",
+      "created": "2025-03-15T22:03:32.873768",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-07-18T09:40:40.686363",
+      "created": "2025-03-15T22:03:32.869864",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Sync.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Sync.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.644399",
+      "created": "2025-03-15T22:03:32.874685",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DeviceSetupManager%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DeviceSetupManager%4Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-08T09:30:13.675555",
+      "created": "2025-03-15T22:00:53.293126",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DeviceSetupManager%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DeviceSetupManager%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-05T14:12:52.477299",
+      "created": "2025-03-15T22:00:53.133564",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Dhcp-Client%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Dhcp-Client%4Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:19:09.494052",
+      "created": "2025-03-15T22:00:52.449415",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Dhcpv6-Client%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Dhcpv6-Client%4Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:00:52.449415",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Diagnosis-DPS%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Diagnosis-DPS%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:30:10.020369",
+      "created": "2025-03-15T22:05:05.253092",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Diagnosis-PCW%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Diagnosis-PCW%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:19:10.316707",
+      "created": "2025-03-15T22:00:52.925808",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Diagnosis-Scheduled%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Diagnosis-Scheduled%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-11T10:14:56.491253",
+      "created": "2025-03-15T22:07:10.233747",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Diagnosis-Scripted%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Diagnosis-Scripted%4Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-11T10:14:56.493255",
+      "created": "2025-03-22T23:05:00.427135",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Diagnosis-Scripted%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Diagnosis-Scripted%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-11T10:14:56.494251",
+      "created": "2025-03-22T23:05:00.428135",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Diagnostics-Performance%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Diagnostics-Performance%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-07-18T09:18:10.565478",
+      "created": "2025-03-15T22:05:12.643523",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DiskDiagnosticDataCollector%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DiskDiagnosticDataCollector%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-30T18:32:20.837610",
+      "created": "2025-03-30T01:20:20.355932",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DxgKrnl-Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DxgKrnl-Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-10T15:05:13.459826",
+      "created": "2025-06-16T14:40:30.409594",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-DxgKrnl-Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-DxgKrnl-Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-06-16T14:40:30.409594",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-EnhancedStorage-EhStorClass%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-EnhancedStorage-EhStorClass%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:00:52.402300",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Fault-Tolerant-Heap%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Fault-Tolerant-Heap%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-18T09:28:10.610894",
+      "created": "2025-03-15T22:04:51.145497",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-FileHistory-Core%4WHC.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-FileHistory-Core%4WHC.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.676160",
+      "created": "2025-03-15T22:07:10.235817",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-GroupPolicy%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-GroupPolicy%4Operational.evtx",
+      "size_bytes": 4198400,
+      "modified": "2025-08-13T15:34:10.374697",
+      "created": "2025-03-15T22:00:53.505584",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-HelloForBusiness%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-HelloForBusiness%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:00:52.950950",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Host-Network-Service-Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Host-Network-Service-Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-16T16:29:49.311283",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Host-Network-Service-Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Host-Network-Service-Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-16T16:29:49.342896",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-HotspotAuth%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-HotspotAuth%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.545251",
+      "created": "2025-03-15T22:00:52.307278",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Hyper-V-Compute-Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Hyper-V-Compute-Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-21T12:49:57.606162",
+      "created": "2025-06-16T14:40:30.392134",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Hyper-V-Compute-Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Hyper-V-Compute-Operational.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-06-16T14:40:30.392134",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Hyper-V-Hypervisor-Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Hyper-V-Hypervisor-Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-03-15T22:00:52.328269",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Hyper-V-Hypervisor-Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Hyper-V-Hypervisor-Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-13T10:21:36.951950",
+      "created": "2025-03-15T22:00:52.339062",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Hyper-V-StorageVSP-Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Hyper-V-StorageVSP-Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T14:39:10.204578",
+      "created": "2025-06-16T14:40:33.520564",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Hyper-V-VmSwitch-Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Hyper-V-VmSwitch-Operational.evtx",
+      "size_bytes": 33558528,
+      "modified": "2025-08-13T15:34:17.192020",
+      "created": "2025-03-15T22:00:53.578734",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Hyper-V-Worker-Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Hyper-V-Worker-Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-06-16T14:40:30.103306",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Hyper-V-Worker-Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Hyper-V-Worker-Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-10T15:05:12.690169",
+      "created": "2025-06-16T14:40:30.103306",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-IKE%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-IKE%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.676160",
+      "created": "2025-03-16T14:08:53.035899",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-Boot%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-Boot%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:00:52.323337",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-Cache%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-Cache%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:21:40.328720",
+      "created": "2025-03-15T22:00:52.428444",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-Dump%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-Dump%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-03-15T22:00:52.441583",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-EventTracing%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-EventTracing%4Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:14:06.446301",
+      "created": "2025-03-15T22:05:33.107685",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-LiveDump%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-LiveDump%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-06-27T09:53:50.744691",
+      "created": "2025-03-22T18:10:22.946861",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-PnP%4Configuration.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-PnP%4Configuration.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-05T14:12:52.475299",
+      "created": "2025-03-15T22:00:52.339062",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-PnP%4Device Management.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-PnP%4Device Management.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-13T12:34:09.769228",
+      "created": "2025-03-15T22:00:52.339062",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-PnP%4Driver Watchdog.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-PnP%4Driver Watchdog.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-08T09:52:43.774871",
+      "created": "2025-03-15T22:00:52.339062",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-Power%4Thermal-Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-Power%4Thermal-Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.571070",
+      "created": "2025-03-15T22:00:52.441583",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-ShimEngine%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-ShimEngine%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-03-15T22:00:52.370837",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-StoreMgr%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-StoreMgr%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.582809",
+      "created": "2025-03-15T22:03:19.827004",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-WHEA%4Errors.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-WHEA%4Errors.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-06-09T13:29:34.740830",
+      "created": "2025-03-15T22:00:52.355179",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Kernel-WHEA%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Kernel-WHEA%4Operational.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-03-15T22:00:52.355179",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-KernelStreaming%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-KernelStreaming%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-06-13T09:19:12.365974",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Known Folders API Service.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Known Folders API Service.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T14:09:10.111162",
+      "created": "2025-03-15T22:00:55.416832",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-LanguagePackSetup%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-LanguagePackSetup%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-11T10:14:56.492251",
+      "created": "2025-03-19T11:52:41.350525",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-LiveId%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-LiveId%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:32:07.171513",
+      "created": "2025-03-15T22:03:21.299465",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-MF-FrameServer%4Camera_DeviceMFT.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-MF-FrameServer%4Camera_DeviceMFT.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:19:09.496376",
+      "created": "2025-06-13T09:19:12.367980",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-MF-FrameServer%4Camera_FrameServer.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-MF-FrameServer%4Camera_FrameServer.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:19:09.496376",
+      "created": "2025-06-13T09:19:12.369986",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-MF-MediaFoundation%4MF_DeviceProxy.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-MF-MediaFoundation%4MF_DeviceProxy.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:19:09.494052",
+      "created": "2025-06-13T09:19:12.369986",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-MUI%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-MUI%4Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.580797",
+      "created": "2025-03-15T22:02:24.216934",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-MUI%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-MUI%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-19T11:59:54.674180",
+      "created": "2025-03-15T22:02:24.216934",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-NCSI%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-NCSI%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-12T14:11:23.111121",
+      "created": "2025-03-15T22:01:47.934826",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-NetworkProfile%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-NetworkProfile%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:14:06.421075",
+      "created": "2025-03-15T22:00:55.416832",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Ntfs%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Ntfs%4Operational.evtx",
+      "size_bytes": 33558528,
+      "modified": "2025-08-13T15:11:40.274529",
+      "created": "2025-03-15T22:00:52.402300",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Ntfs%4WHC.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Ntfs%4WHC.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-03-15T22:00:52.402300",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Partition%4Diagnostic.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Partition%4Diagnostic.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-12T10:01:22.437696",
+      "created": "2025-03-15T22:00:52.402300",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-PCI%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-PCI%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-08T15:15:14.831778",
+      "created": "2025-03-15T22:00:52.370837",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Perflib%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Perflib%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-07-18T09:25:40.600479",
+      "created": "2025-03-15T22:05:24.021795",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-PowerShell%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-PowerShell%4Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-21T18:58:15.127947",
+      "created": "2025-03-16T22:51:20.926987",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-PowerShell%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-PowerShell%4Operational.evtx",
+      "size_bytes": 15732736,
+      "modified": "2025-08-13T15:33:56.124363",
+      "created": "2025-03-16T22:51:20.922996",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-PrintService%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-PrintService%4Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-15T22:03:22.283314",
+      "created": "2025-03-15T22:03:00.655344",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Privacy-Auditing%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Privacy-Auditing%4Operational.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-11T09:37:26.366387",
+      "created": "2025-03-15T22:00:52.370837",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Program-Compatibility-Assistant%4CompatAfterUpgrade.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Program-Compatibility-Assistant%4CompatAfterUpgrade.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.579046",
+      "created": "2025-03-15T22:00:55.416832",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "microsoft-windows-provisioning-diagnostics-provider%4admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\microsoft-windows-provisioning-diagnostics-provider%4admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T10:04:06.813955",
+      "created": "2025-03-15T22:02:27.037393",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Provisioning-Diagnostics-Provider%4AutoPilot.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Provisioning-Diagnostics-Provider%4AutoPilot.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.591034",
+      "created": "2025-03-15T22:03:27.805974",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Provisioning-Diagnostics-Provider%4ManagementService.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Provisioning-Diagnostics-Provider%4ManagementService.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.604765",
+      "created": "2025-03-15T22:03:27.805974",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-PushNotification-Platform%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-PushNotification-Platform%4Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.644399",
+      "created": "2025-03-15T22:03:32.874685",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-PushNotification-Platform%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-PushNotification-Platform%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:32:40.105665",
+      "created": "2025-03-15T22:03:32.874685",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-ReadyBoost%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-ReadyBoost%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-18T09:38:10.659469",
+      "created": "2025-03-15T22:01:33.311206",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Regsvr32%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Regsvr32%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-06-09T11:11:30.971853",
+      "created": "2025-05-31T08:35:11.852298",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Resource-Exhaustion-Detector%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Resource-Exhaustion-Detector%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-29T14:21:43.229545",
+      "created": "2025-03-15T22:03:33.200672",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Resource-Exhaustion-Resolver%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Resource-Exhaustion-Resolver%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-16T16:49:51.764165",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-RestartManager%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-RestartManager%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.676160",
+      "created": "2025-03-16T16:26:31.077300",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Security-LessPrivilegedAppContainer%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Security-LessPrivilegedAppContainer%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-05T10:50:21.695017",
+      "created": "2025-03-16T16:45:55.003197",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Security-Mitigations%4KernelMode.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Security-Mitigations%4KernelMode.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:14:10.283814",
+      "created": "2025-03-15T22:02:59.845097",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Security-Mitigations%4UserMode.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Security-Mitigations%4UserMode.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.582809",
+      "created": "2025-03-15T22:02:59.845097",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Security-SPP-UX-Notifications%4ActionCenter.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Security-SPP-UX-Notifications%4ActionCenter.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:32:17.332577",
+      "created": "2025-03-15T22:03:33.948544",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Shell-ConnectedAccountState%4ActionCenter.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Shell-ConnectedAccountState%4ActionCenter.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.676160",
+      "created": "2025-03-15T22:07:10.239911",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Shell-Core%4ActionCenter.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Shell-Core%4ActionCenter.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.582809",
+      "created": "2025-03-15T22:03:24.360130",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Shell-Core%4AppDefaults.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Shell-Core%4AppDefaults.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T12:34:09.772033",
+      "created": "2025-03-15T22:03:24.360130",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Shell-Core%4LogonTasksChannel.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Shell-Core%4LogonTasksChannel.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.582809",
+      "created": "2025-03-15T22:03:24.360130",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Shell-Core%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Shell-Core%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:19:10.316707",
+      "created": "2025-03-15T22:02:25.925102",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-ShellCommon-StartLayoutPopulation%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-ShellCommon-StartLayoutPopulation%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-12T09:06:22.237004",
+      "created": "2025-03-16T00:10:14.154133",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-SmbClient%4Audit.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-SmbClient%4Audit.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.582809",
+      "created": "2025-03-15T22:03:21.299465",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-SmbClient%4Connectivity.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-SmbClient%4Connectivity.evtx",
+      "size_bytes": 3215360,
+      "modified": "2025-08-13T11:19:09.493384",
+      "created": "2025-03-15T22:03:21.299465",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-SMBClient%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-SMBClient%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-11T14:24:57.277241",
+      "created": "2025-03-15T22:03:21.299465",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-SmbClient%4Security.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-SmbClient%4Security.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:03:21.299465",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-SMBServer%4Audit.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-SMBServer%4Audit.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.577035",
+      "created": "2025-03-15T22:00:53.616309",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-SMBServer%4Connectivity.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-SMBServer%4Connectivity.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-13T11:04:09.443704",
+      "created": "2025-03-15T22:00:53.614562",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-SMBServer%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-SMBServer%4Operational.evtx",
+      "size_bytes": 5312512,
+      "modified": "2025-08-13T11:19:09.494052",
+      "created": "2025-03-15T22:00:53.594799",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-SMBServer%4Security.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-SMBServer%4Security.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.571070",
+      "created": "2025-03-15T22:00:53.610451",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-StateRepository%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-StateRepository%4Operational.evtx",
+      "size_bytes": 3215360,
+      "modified": "2025-08-13T13:59:10.095287",
+      "created": "2025-03-15T22:00:52.365196",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-StateRepository%4Restricted.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-StateRepository%4Restricted.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.569062",
+      "created": "2025-03-15T22:00:52.365196",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Storage-ClassPnP%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Storage-ClassPnP%4Operational.evtx",
+      "size_bytes": 5312512,
+      "modified": "2025-08-12T10:01:22.437696",
+      "created": "2025-03-21T15:37:12.335498",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Storage-Storport%4Health.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Storage-Storport%4Health.evtx",
+      "size_bytes": 2166784,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:00:52.386616",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Storage-Storport%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Storage-Storport%4Operational.evtx",
+      "size_bytes": 22089728,
+      "modified": "2025-08-13T15:30:21.221633",
+      "created": "2025-03-15T22:00:52.386616",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-StorageManagement%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-StorageManagement%4Operational.evtx",
+      "size_bytes": 2166784,
+      "modified": "2025-08-13T10:59:09.421548",
+      "created": "2025-03-15T22:06:57.816181",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-StorageSettings%4Diagnostic.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-StorageSettings%4Diagnostic.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-03-20T15:35:54.633586",
+      "created": "2025-03-20T15:29:53.285223",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-StorageSpaces-Driver%4Diagnostic.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-StorageSpaces-Driver%4Diagnostic.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.571070",
+      "created": "2025-03-15T22:00:52.417456",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-StorageSpaces-Driver%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-StorageSpaces-Driver%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-12T10:01:22.437696",
+      "created": "2025-03-15T22:00:52.417456",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-StorageSpaces-ManagementAgent%4WHC.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-StorageSpaces-ManagementAgent%4WHC.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.676160",
+      "created": "2025-03-15T22:07:10.241421",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-StorageVolume%4Diagnostic.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-StorageVolume%4Diagnostic.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.571070",
+      "created": "2025-03-15T22:00:52.417456",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-StorageVolume%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-StorageVolume%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-12T10:01:22.437696",
+      "created": "2025-03-15T22:00:52.417456",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Store%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Store%4Operational.evtx",
+      "size_bytes": 20058112,
+      "modified": "2025-08-13T15:19:10.316707",
+      "created": "2025-03-15T22:03:31.793196",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Storsvc%4Diagnostic.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Storsvc%4Diagnostic.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-12T10:01:22.437696",
+      "created": "2025-03-15T23:02:56.342089",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-TaskScheduler%4Maintenance.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-TaskScheduler%4Maintenance.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T12:04:09.658178",
+      "created": "2025-03-15T22:03:20.777734",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-TerminalServices-LocalSessionManager%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-TerminalServices-LocalSessionManager%4Admin.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.545251",
+      "created": "2025-03-15T22:00:52.328269",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-TerminalServices-LocalSessionManager%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-TerminalServices-LocalSessionManager%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:32:07.850699",
+      "created": "2025-03-15T22:00:52.328269",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-TerminalServices-RDPClient%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-TerminalServices-RDPClient%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-06-16T14:40:35.760181",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Time-Service%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Time-Service%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-16T22:51:17.603968",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-TWinUI%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-TWinUI%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T12:34:09.774808",
+      "created": "2025-03-16T16:29:23.503831",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-TZSync%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-TZSync%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-11T10:14:56.494251",
+      "created": "2025-03-15T22:03:42.618317",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-UAC%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-UAC%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-13T09:46:36.675739",
+      "created": "2025-05-22T11:43:15.266838",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-UAC-FileVirtualization%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-UAC-FileVirtualization%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-30T21:28:18.679300",
+      "created": "2025-03-30T21:23:05.156025",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-UniversalTelemetryClient%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-UniversalTelemetryClient%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:16:40.308565",
+      "created": "2025-03-15T22:00:55.416832",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-USBVideo%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-USBVideo%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:19:09.494052",
+      "created": "2025-04-28T09:44:24.130714",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-User Device Registration%4Admin.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-User Device Registration%4Admin.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:03:19.267901",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-User Profile Service%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-User Profile Service%4Operational.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:00:52.354171",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-UserPnp%4ActionCenter.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-UserPnp%4ActionCenter.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.561285",
+      "created": "2025-03-15T22:00:52.339062",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-UserPnp%4DeviceInstall.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-UserPnp%4DeviceInstall.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-18T09:18:10.565478",
+      "created": "2025-03-15T22:00:52.339062",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-UserSettingsBackup-Orchestrator%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-UserSettingsBackup-Orchestrator%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-08T09:05:13.566156",
+      "created": "2025-03-16T16:34:38.003757",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-VDRVROOT%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-VDRVROOT%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-04-28T09:43:57.330489",
+      "created": "2025-04-22T09:15:11.731385",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-VHDMP-Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-VHDMP-Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:19:10.316707",
+      "created": "2025-04-22T09:15:11.721355",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-VolumeSnapshot-Driver%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-VolumeSnapshot-Driver%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-07-18T09:18:10.549720",
+      "created": "2025-03-15T22:00:52.417456",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-VPN%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-VPN%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.676160",
+      "created": "2025-03-16T14:08:53.039901",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Wcmsvc%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Wcmsvc%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:26:40.334189",
+      "created": "2025-03-15T22:00:52.355179",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WebAuthN%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WebAuthN%4Operational.evtx",
+      "size_bytes": 1118208,
+      "modified": "2025-08-13T10:14:06.915420",
+      "created": "2025-03-15T22:00:52.942999",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WER-Diag%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WER-Diag%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:04:50.048631",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WER-PayloadHealth%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WER-PayloadHealth%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T10:44:09.376007",
+      "created": "2025-03-15T22:03:41.555045",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WerKernel%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WerKernel%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-02T15:12:17.677282",
+      "created": "2025-03-22T18:10:22.941700",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WFP%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WFP%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-16T14:08:53.036898",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Windows Defender%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Windows Defender%4Operational.evtx",
+      "size_bytes": 2166784,
+      "modified": "2025-07-01T14:57:57.900197",
+      "created": "2025-03-15T22:03:19.962840",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Windows Defender%4WHC.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Windows Defender%4WHC.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-15T22:03:24.310261",
+      "created": "2025-03-15T22:03:19.969921",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Windows Firewall With Advanced Security%4ConnectionSecurity.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Windows Firewall With Advanced Security%4ConnectionSecurity.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.577035",
+      "created": "2025-03-15T22:00:53.616309",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Windows Firewall With Advanced Security%4Firewall.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Windows Firewall With Advanced Security%4Firewall.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T14:11:40.118677",
+      "created": "2025-03-15T22:00:53.616309",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Windows Firewall With Advanced Security%4FirewallDiagnostics.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Windows Firewall With Advanced Security%4FirewallDiagnostics.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-02T09:10:45.360843",
+      "created": "2025-03-15T22:00:53.624504",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WindowsBackup%4ActionCenter.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WindowsBackup%4ActionCenter.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.660354",
+      "created": "2025-03-15T22:07:10.230368",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WindowsSystemAssessmentTool%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WindowsSystemAssessmentTool%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T10:04:06.816545",
+      "created": "2025-03-16T23:17:26.961106",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WindowsUpdateClient%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WindowsUpdateClient%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T10:31:39.331500",
+      "created": "2025-03-15T22:03:28.946780",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WinINet-Config%4ProxyConfigChanged.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WinINet-Config%4ProxyConfigChanged.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-15T22:03:22.283314",
+      "created": "2025-03-15T22:00:52.307278",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-Winlogon%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-Winlogon%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:03:27.805974",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WinRM%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WinRM%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:19:09.496376",
+      "created": "2025-03-15T22:02:25.624651",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WLAN-AutoConfig%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WLAN-AutoConfig%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:19:09.494052",
+      "created": "2025-03-15T22:00:52.449415",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WMI-Activity%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WMI-Activity%4Operational.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T15:19:10.316707",
+      "created": "2025-03-15T22:00:52.398818",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WorkFolders%4WHC.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WorkFolders%4WHC.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.676160",
+      "created": "2025-03-15T22:07:10.245523",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WPD-ClassInstaller%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WPD-ClassInstaller%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-21T18:58:15.127947",
+      "created": "2025-03-21T15:37:16.786849",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-WPD-MTPClassDriver%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-WPD-MTPClassDriver%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-06-23T11:17:01.474919",
+      "created": "2025-05-07T09:50:28.931470",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-ZTDNS%4BlockedConnections.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-ZTDNS%4BlockedConnections.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-04-28T09:45:11.946594",
+      "created": "2025-04-28T09:44:43.789484",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-Windows-ZTDNS%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-ZTDNS%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-04-28T09:45:11.946594",
+      "created": "2025-04-28T09:44:43.821408",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Microsoft-WindowsPhone-Connectivity-WiFiConnSvc-Channel.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Microsoft-WindowsPhone-Connectivity-WiFiConnSvc-Channel.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-03-16T16:29:23.563294",
+      "created": "2025-03-15T22:00:52.355179",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "OAlerts.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\OAlerts.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-08-08T10:52:43.980960",
+      "created": "2025-03-15T22:00:52.307278",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "OneApp_IGCC.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\OneApp_IGCC.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T09:11:36.406352",
+      "created": "2025-03-15T22:00:52.307278",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Parameters.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Parameters.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-25T08:56:02.262727",
+      "created": "2025-07-25T08:56:02.262727",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Plugin-Passkey-Providers%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Plugin-Passkey-Providers%4Operational.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-06-13T09:19:52.030766",
+      "created": "2025-06-13T09:19:12.371990",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "PowerShellCore%4Operational.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\PowerShellCore%4Operational.evtx",
+      "size_bytes": 4263936,
+      "modified": "2025-08-13T14:56:40.235557",
+      "created": "2025-03-28T09:18:41.830935",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Security.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Security.evtx",
+      "size_bytes": 20975616,
+      "modified": "2025-08-13T15:32:07.852809",
+      "created": "2025-03-15T22:00:52.291582",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Setup.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Setup.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-08-13T11:06:39.444222",
+      "created": "2025-03-16T16:29:23.513387",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "State.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\State.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-07-25T08:56:02.268390",
+      "created": "2025-07-25T08:56:02.268390",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Synced-Passkey-Provider%4Operatonal.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Synced-Passkey-Provider%4Operatonal.evtx",
+      "size_bytes": 69632,
+      "modified": "2025-06-13T09:19:52.030766",
+      "created": "2025-06-13T09:19:12.373736",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "System.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\System.evtx",
+      "size_bytes": 16846848,
+      "modified": "2025-08-13T14:11:40.116906",
+      "created": "2025-03-15T22:00:52.291582",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "Windows PowerShell.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\Windows PowerShell.evtx",
+      "size_bytes": 15732736,
+      "modified": "2025-08-13T15:33:55.262775",
+      "created": "2025-03-15T22:00:52.307278",
+      "type": "Windows Event Log"
+    },
+    {
+      "name": "WINDOWS_KS_CHANNEL.evtx",
+      "path": "C:\\Windows\\System32\\winevt\\Logs\\WINDOWS_KS_CHANNEL.evtx",
+      "size_bytes": 1052672,
+      "modified": "2025-06-12T09:03:56.987009",
+      "created": "2025-04-28T09:44:43.837579",
+      "type": "Windows Event Log"
+    }
+  ],
+  "prefetch_files": [],
+  "browser_history_metadata": [
+    {
+      "browser": "Chrome",
+      "database_path": "C:\\Users\\ACER-1\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History",
+      "size_bytes": 4653056,
+      "modified": "2025-08-13T12:26:43.133497",
+      "type": "Browser History Database"
+    },
+    {
+      "browser": "Edge",
+      "database_path": "C:\\Users\\ACER-1\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\History",
+      "size_bytes": 4653056,
+      "modified": "2025-07-11T11:00:31.025658",
+      "type": "Browser History Database"
+    },
+    {
+      "browser": "Firefox (dl8gyiq6.default-release)",
+      "database_path": "C:\\Users\\ACER-1\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\dl8gyiq6.default-release\\places.sqlite",
+      "size_bytes": 5242880,
+      "modified": "2025-06-09T15:40:05.571300",
+      "type": "Browser History Database"
+    }
+  ],
+  "usb_device_history": [
+    {
+      "device_id": "Disk&Ven_General&Prod_USB_Flash_Disk&Rev_1.00",
+      "instance_id": "000000000000242D&0",
+      "friendly_name": "General USB Flash Disk USB Device",
+      "type": "USB Storage Device"
+    },
+    {
+      "device_id": "Disk&Ven_Generic&Prod_Flash_Disk&Rev_8.07",
+      "instance_id": "F55CCE44&0",
+      "friendly_name": "Generic Flash Disk USB Device",
+      "type": "USB Storage Device"
+    },
+    {
+      "device_id": "Disk&Ven_Kingston&Prod_DataTraveler_2.0&Rev_PMAP",
+      "instance_id": "54E6FC6B7D9AED4167F30917&0",
+      "friendly_name": "Kingston DataTraveler 2.0 USB Device",
+      "type": "USB Storage Device"
+    },
+    {
+      "device_id": "Disk&Ven_Kingston&Prod_DT_101_G2&Rev_1.00",
+      "instance_id": "001CC0EC32CDFC9195B02451&0",
+      "friendly_name": "Kingston DT 101 G2 USB Device",
+      "type": "USB Storage Device"
+    },
+    {
+      "device_id": "Disk&Ven_Mass&Prod_Storage_Device&Rev_1.00",
+      "instance_id": "121220160204&0",
+      "friendly_name": "Mass Storage Device USB Device",
+      "type": "USB Storage Device"
+    }
+  ],
+  "startup_programs": [
+    {
+      "name": "SecurityHealth",
+      "command": "%windir%\\system32\\SecurityHealthSystray.exe",
+      "registry_hive": "HKLM",
+      "registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "type": "Startup Program"
+    },
+    {
+      "name": "RtkAudUService",
+      "command": "\"C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_70f88b5e2683307e\\RtkAudUService64.exe\" -background",
+      "registry_hive": "HKLM",
+      "registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "type": "Startup Program"
+    },
+    {
+      "name": "OneDrive",
+      "command": "\"C:\\Users\\ACER-1\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background",
+      "registry_hive": "HKCU",
+      "registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "type": "Startup Program"
+    },
+    {
+      "name": "EpicGamesLauncher",
+      "command": "\"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe\" -silent -launchcontext=boot",
+      "registry_hive": "HKCU",
+      "registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "type": "Startup Program"
+    },
+    {
+      "name": "Docker Desktop",
+      "command": "C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe -Autostart",
+      "registry_hive": "HKCU",
+      "registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "type": "Startup Program"
+    },
+    {
+      "name": "SafeConnect",
+      "command": "C:\\Program Files (x86)\\McAfee\\McAfee Safe Connect\\SafeConnect.Entry.exe /StartMinimized",
+      "registry_hive": "HKCU",
+      "registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "type": "Startup Program"
+    },
+    {
+      "name": "electron.app.LM Studio",
+      "command": "C:\\Program Files\\LM Studio\\LM Studio.exe --run-as-service",
+      "registry_hive": "HKCU",
+      "registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "type": "Startup Program"
+    },
+    {
+      "name": "SIEM-AutoStart",
+      "command": "PowerShell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File \"C:\\Users\\ACER-1\\Documents\\SIEM\\start-siem-user.ps1\"",
+      "registry_hive": "HKCU",
+      "registry_key": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "type": "Startup Program"
+    }
+  ],
+  "installed_software": [
+    {
+      "name": "NVM for Windows 1.2.2",
+      "version": "1.2.2",
+      "publisher": "Author Software Inc.",
+      "install_date": "20250515",
+      "registry_key": "40078385-F676-4C61-9A9C-F9028599D6D3_is1",
+      "type": "Installed Software"
+    },
+    {
+      "name": "7-Zip 24.09 (x64)",
+      "version": "24.09",
+      "publisher": "Igor Pavlov",
+      "install_date": "Unknown",
+      "registry_key": "7-Zip",
+      "type": "Installed Software"
+    },
+    {
+      "name": "LM Studio 0.3.20",
+      "version": "0.3.20",
+      "publisher": "LM Studio",
+      "install_date": "Unknown",
+      "registry_key": "c6dbe996-22a9-5998-b542-7abe33da3b83",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Docker Desktop",
+      "version": "4.41.2",
+      "publisher": "Docker Inc.",
+      "install_date": "Unknown",
+      "registry_key": "Docker Desktop",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Git",
+      "version": "2.50.0",
+      "publisher": "The Git Development Community",
+      "install_date": "20250625",
+      "registry_key": "Git_is1",
+      "type": "Installed Software"
+    },
+    {
+      "name": "McAfee",
+      "version": "1.31.148.1",
+      "publisher": "McAfee, LLC",
+      "install_date": "Unknown",
+      "registry_key": "McAfee.wps",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Mozilla Firefox (x64 es-MX)",
+      "version": "141.0.3",
+      "publisher": "Mozilla",
+      "install_date": "Unknown",
+      "registry_key": "Mozilla Firefox 141.0.3 (x64 es-MX)",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Mozilla Maintenance Service",
+      "version": "138.0.4",
+      "publisher": "Mozilla",
+      "install_date": "Unknown",
+      "registry_key": "MozillaMaintenanceService",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office Professional Plus 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "Unknown",
+      "registry_key": "Office16.PROPLUS",
+      "type": "Installed Software"
+    },
+    {
+      "name": "PostgreSQL 17 ",
+      "version": "17.5-1",
+      "publisher": "PostgreSQL Global Development Group",
+      "install_date": "20250516",
+      "registry_key": "PostgreSQL 17",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Left 4 Dead 2",
+      "version": "Unknown",
+      "publisher": "Valve",
+      "install_date": "Unknown",
+      "registry_key": "Steam App 550",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Surfshark",
+      "version": "5.15.1999",
+      "publisher": "Surfshark",
+      "install_date": "Unknown",
+      "registry_key": "Surfshark 5.15.1999",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Tesseract-OCR - open source OCR engine",
+      "version": "5.5.0.20241111",
+      "publisher": "Tesseract-OCR community",
+      "install_date": "Unknown",
+      "registry_key": "Tesseract-OCR",
+      "type": "Installed Software"
+    },
+    {
+      "name": "VLC media player",
+      "version": "3.0.16",
+      "publisher": "VideoLAN",
+      "install_date": "Unknown",
+      "registry_key": "VLC media player",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Warp",
+      "version": "v0.2025.07.30.08.12.stable_02",
+      "publisher": "Denver Technologies, Inc.",
+      "install_date": "20250801",
+      "registry_key": "warp-terminal-stable_is1",
+      "type": "Installed Software"
+    },
+    {
+      "name": "WinRAR 6.21 (64-bit)",
+      "version": "6.21.0",
+      "publisher": "win.rar GmbH",
+      "install_date": "Unknown",
+      "registry_key": "WinRAR archiver",
+      "type": "Installed Software"
+    },
+    {
+      "name": "XAMPP",
+      "version": "8.0.30-0",
+      "publisher": "Apache Friends",
+      "install_date": "20250317",
+      "registry_key": "xampp",
+      "type": "Installed Software"
+    },
+    {
+      "name": "XnConvert (x64)",
+      "version": "1.105.0.0",
+      "publisher": "Pierre-e Gougelet",
+      "install_date": "20250807",
+      "registry_key": "XnConvert (x64)_is1",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40664",
+      "version": "12.0.40664",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{010792BA-551A-3AC0-A7EF-0FAB4156C382}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.13.3 Tcl/Tk Support (64-bit)",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{0E707547-3C9A-44CE-B7DE-12D5816BD5A5}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219",
+      "version": "10.0.40219",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250329",
+      "registry_key": "{1D8E6291-B0D5-35EC-8441-6616F567A0F7}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Oh My Posh",
+      "version": "25.8.0",
+      "publisher": "Jan De Dobbeleer",
+      "install_date": "20250330",
+      "registry_key": "{1E307838-4962-4138-8C1D-587F3053FA74}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 Standard Library (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{1EC9BA0E-C913-4A75-A972-83409D8A239C}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Surfshark",
+      "version": "5.15.1999",
+      "publisher": "Surfshark",
+      "install_date": "20250421",
+      "registry_key": "{2554CE29-4C0E-4EEF-924D-D9201270A54F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 Development Libraries (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{272951B0-77A8-4A46-8966-A4F8EBCD9E30}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 Executables (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{2780C09B-4A42-44B3-A208-4167DF91BBB7}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.42.34438",
+      "version": "14.42.34438",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{2E15F519-4FDA-4834-B4EE-7EFCE7D8D4EE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "User Experience Improvement Program Service",
+      "version": "5.00.3018",
+      "publisher": "Acer Incorporated",
+      "install_date": "20220506",
+      "registry_key": "{323EA05D-046D-449D-9D7C-89243C957CCE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.61030",
+      "version": "11.0.61030",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{37B8F9C7-03FB-3253-8781-2517C99D7C00}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.4148",
+      "version": "9.0.30729.4148",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{4B6C7001-C7D6-3710-913E-5BC23FCE91E6}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Node.js",
+      "version": "22.15.1",
+      "publisher": "Node.js Foundation",
+      "install_date": "20250515",
+      "registry_key": "{4BF45774-4D5D-4AED-BA3E-F56EA448FF86}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40664",
+      "version": "12.0.40664",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{53CF6934-A98D-3D84-9146-FC4EDF3D5641}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 Core Interpreter (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{57E1557E-D24B-4A16-B358-D3EF95F4965E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161",
+      "version": "9.0.30729.6161",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250329",
+      "registry_key": "{5FCE6D76-F5DC-37AB-B2B8-22AB8CEDB1D4}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.13.3 Standard Library (64-bit)",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{64F73D42-8FE9-479F-85BE-50D5345D23C7}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual Studio Installer",
+      "version": "3.13.2069.59209",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{6F320B93-EE3C-4826-85E0-ADF79F8D4C61}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Java 8 Update 441 (64-bit)",
+      "version": "8.0.4410.7",
+      "publisher": "Oracle Corporation",
+      "install_date": "20250315",
+      "registry_key": "{77724AE4-039E-4CA4-87B4-2F64180441F0}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 Tcl/Tk Support (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{8EEE1658-8844-4DAD-8A3B-7AF321C9A4FD}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.13.3 Core Interpreter (64-bit)",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{8FFE8C14-C93D-4E9E-867A-28E75CC49A31}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office Professional Plus 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250813",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Word 2016 (KB5002763) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{0DF22ED2-2423-4CD1-AAB9-DB5DE5EBB44F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB5002244) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{12433ADA-1793-45D6-B5E3-58C3A490C101}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002588) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{1340D09E-2B5D-4829-BBC9-42559CB6CBA2}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB5002623) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{15F938CC-D683-433E-B300-C3B15EC3F6DB}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB3213650) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{18224882-1EA1-460B-8899-DD7F013C1EC7}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4484145) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{21CF7F22-5D29-458B-BFF0-4D2CED6475AE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002469) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{228EAA41-0576-440E-8AFB-FCE20C72A6A7}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB3114524) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{264B346A-CBF3-4ED6-A2F6-21E47CA8017F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4011259) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{328D548A-FC7C-40E0-A87B-9676C059315B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB2920717) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{39BB0471-6969-4C29-B8BC-2AD561BEC25E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Publisher 2016 (KB5002566) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{3B394307-FBFC-40FF-81C7-5D87535100D8}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Definition Update for Microsoft Office 2016 (KB3115407) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{3DBF9257-2612-4385-BCE3-E9D4C41CC8CB}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4484103) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{3F3A5408-670D-47BC-A868-D0FA4652AC3E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4022193) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{5246AFBE-4C9E-45C4-8ABB-544458942F3E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4462148) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{5585F39F-1DE1-4DB1-B227-292E55E5433A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB3085538) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{5A84393A-E440-48A1-BB99-AD1244AC0C35}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft OneNote 2016 (KB5002714) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{5A955DB5-C383-45D3-9A19-EB5C19147464}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4475581) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{602BFD6C-5400-403B-A39D-8F4EE35E3D0C}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB5002050) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{630DCCC9-9E19-4EB4-8036-0EB9D242D024}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Outlook 2016 (KB5002747) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{6457D29F-8B18-4085-8512-3BFFC9815A29}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Visio 2016 (KB5002634) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{676A222D-7381-4C0D-B571-082AD7E0DF0C}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4484432) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{684C44A0-9B0B-4A2A-9C2F-6163E35A7FCA}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002616) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{69152D20-4370-4A67-963C-63C37A6AB4AC}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4484104) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{7157818F-C6EA-4070-AE3F-212DF98C9A83}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB3115081) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{78D7B4DE-619F-4312-9707-DF354A48D110}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB3213551) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{7AFED019-B612-489B-B369-2920C6B5A96D}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Excel 2016 (KB5002758) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{7BE265D1-AE35-45C0-AB68-78F5F6FBFD4F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4464583) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{7CF2B0AC-3B7B-479D-A512-4B94BFF79E9B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB3118262) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{7D634991-F4C0-4761-9F90-54F69A8199EB}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5001941) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{807CFF0F-7171-4B8C-823F-842075A4453A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB5002251) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{81D6DC5B-D707-4D4F-9B80-D780D6E292CF}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB2920720) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{8683D594-A08C-451F-82C3-51D6FB730A6C}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Project 2016 (KB5002652) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{8BE28313-0C15-4C31-B5F8-08959E44EA66}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4011634) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{8F860F8B-E4DC-4F1E-90EB-0EA6779C6367}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB3114903) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{92281B72-2A8C-40A4-BD15-58CCDF7DEDB1}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB3118263) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{94848838-9497-4F39-8294-CFB65614776A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB3191869) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{96648CB1-EA94-4DA9-AD15-1D38037B63AF}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB5002466) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{99F237BE-40BE-48F7-B7F9-86D8393BF294}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4011621) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{9B7089F6-2B38-443A-B007-5DFAF6872D85}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4475587) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{9CB39928-B629-4CE1-BAB7-2D6F397916B4}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft PowerPoint 2016 (KB5002765) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{A495FE4A-1DA6-4A3B-812A-0074014C92C2}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB3191929) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{A65F3D82-7DC0-42EE-9374-AA7BA1AA586A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4011629) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{A8ABD88B-9B75-4A34-A33B-D50E6ABD46A3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB2920724) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{AA7A282E-E962-4C45-9A74-16C49FD88FF1}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Skype for Business 2016 (KB5002567) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{AC7565EF-E108-49D4-9F46-5A1AEC72B27B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Access 2016 (KB5002701) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{AC7EBEF3-69BA-479A-8FC1-AA9B6FD37A53}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4464587) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{AD26BCAC-856E-4AE9-B86A-32D08FB5F60E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB5002733) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{AF7B4F8A-EEB5-4F3F-9FBE-4ACB0A963EF3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB3118264) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{B2437330-4140-4B97-8041-3D337D716DC9}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4011035) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{B7A5BB62-6724-414A-8915-942E141B5965}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002734) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{BA4553CB-8931-43AD-8785-1859C14464F1}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft OneDrive for Business (KB4022219) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{BEE8A3FB-432A-4F06-8A38-F12ADB043344}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4022176) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{C48E4AFE-6590-49B5-B830-D0DEC86212E5}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002655) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{CC7EAB7C-9F56-4C84-B751-B54407DDEEB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002756) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{CF5A8A5F-059C-4187-8843-868D5A00807E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB2920678) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{D6AE0D54-13A7-4B0D-A862-8AEF7D4796A6}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Visio Viewer 2016 (KB2920709) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{E2481EA3-9B05-44DA-AFE0-FA07BCA70824}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002573) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{FBDF2571-2C0F-406E-9A78-B6FBD61209CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4032254) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{FC118D77-E399-4BD1-BA89-03675D9E7CE8}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4011574) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0011-0000-1000-0000000FF1CE}_Office16.PROPLUS_{FF3C4299-6B38-4207-845A-DD8AEBAE2475}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Access MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250409",
+      "registry_key": "{90160000-0015-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Access 2016 (KB5002701) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0015-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{AC7EBEF3-69BA-479A-8FC1-AA9B6FD37A53}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0015-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Excel MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250813",
+      "registry_key": "{90160000-0016-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Excel 2016 (KB5002758) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0016-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{7BE265D1-AE35-45C0-AB68-78F5F6FBFD4F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4011629) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0016-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{A8ABD88B-9B75-4A34-A33B-D50E6ABD46A3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0016-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft PowerPoint MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250813",
+      "registry_key": "{90160000-0018-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Excel 2016 (KB5002758) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0018-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{7BE265D1-AE35-45C0-AB68-78F5F6FBFD4F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft PowerPoint 2016 (KB5002765) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0018-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{A495FE4A-1DA6-4A3B-812A-0074014C92C2}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0018-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Publisher MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250409",
+      "registry_key": "{90160000-0019-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Publisher 2016 (KB5002566) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0019-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{3B394307-FBFC-40FF-81C7-5D87535100D8}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0019-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Outlook MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250813",
+      "registry_key": "{90160000-001A-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Word 2016 (KB5002763) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001A-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{0DF22ED2-2423-4CD1-AAB9-DB5DE5EBB44F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Outlook 2016 (KB5002747) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001A-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{6457D29F-8B18-4085-8512-3BFFC9815A29}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001A-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Word MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250813",
+      "registry_key": "{90160000-001B-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Word 2016 (KB5002763) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001B-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{0DF22ED2-2423-4CD1-AAB9-DB5DE5EBB44F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Excel 2016 (KB5002758) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001B-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{7BE265D1-AE35-45C0-AB68-78F5F6FBFD4F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001B-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Eines de correcció del Microsoft Office 2016: català",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250709",
+      "registry_key": "{90160000-001F-0403-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4464583) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-0403-1000-0000000FF1CE}_Office16.PROPLUS_{7CF2B0AC-3B7B-479D-A512-4B94BFF79E9B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-0403-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office Proofing Tools 2016 - English",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250709",
+      "registry_key": "{90160000-001F-0409-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4464583) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-0409-1000-0000000FF1CE}_Office16.PROPLUS_{7CF2B0AC-3B7B-479D-A512-4B94BFF79E9B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-0409-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Revisores de Texto do Microsoft Office 2016 – Português (Brasil)",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250709",
+      "registry_key": "{90160000-001F-0416-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4464583) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-0416-1000-0000000FF1CE}_Office16.PROPLUS_{7CF2B0AC-3B7B-479D-A512-4B94BFF79E9B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-0416-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office zuzenketa-tresnak 2016 - Euskara",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250409",
+      "registry_key": "{90160000-001F-042D-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-042D-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Ferramentas de verificación de Microsoft Office 2016 - Galego",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250409",
+      "registry_key": "{90160000-001F-0456-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-0456-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Herramientas de corrección de Microsoft Office 2016: español",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250709",
+      "registry_key": "{90160000-001F-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4464583) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{7CF2B0AC-3B7B-479D-A512-4B94BFF79E9B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-001F-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office Proofing (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250409",
+      "registry_key": "{90160000-002C-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-002C-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft InfoPath MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250409",
+      "registry_key": "{90160000-0044-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0044-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office Shared MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250813",
+      "registry_key": "{90160000-006E-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4484103) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-006E-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{3F3A5408-670D-47BC-A868-D0FA4652AC3E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB3213551) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-006E-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{7AFED019-B612-489B-B369-2920C6B5A96D}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-006E-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4022176) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-006E-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{C48E4AFE-6590-49B5-B830-D0DEC86212E5}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002756) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-006E-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{CF5A8A5F-059C-4187-8843-868D5A00807E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002573) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-006E-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{FBDF2571-2C0F-406E-9A78-B6FBD61209CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4011574) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-006E-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{FF3C4299-6B38-4207-845A-DD8AEBAE2475}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft DCF MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250709",
+      "registry_key": "{90160000-0090-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5001941) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0090-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{807CFF0F-7171-4B8C-823F-842075A4453A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-0090-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft OneNote MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250709",
+      "registry_key": "{90160000-00A1-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft OneNote 2016 (KB5002714) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00A1-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{5A955DB5-C383-45D3-9A19-EB5C19147464}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00A1-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Groove MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250409",
+      "registry_key": "{90160000-00BA-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00BA-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft OneDrive for Business (KB4022219) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00BA-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{BEE8A3FB-432A-4F06-8A38-F12ADB043344}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office 32-bit Components 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250813",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Word 2016 (KB5002763) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{0DF22ED2-2423-4CD1-AAB9-DB5DE5EBB44F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB5002623) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{15F938CC-D683-433E-B300-C3B15EC3F6DB}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB3213650) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{18224882-1EA1-460B-8899-DD7F013C1EC7}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002469) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{228EAA41-0576-440E-8AFB-FCE20C72A6A7}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Publisher 2016 (KB5002566) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{3B394307-FBFC-40FF-81C7-5D87535100D8}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4484103) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{3F3A5408-670D-47BC-A868-D0FA4652AC3E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB4462148) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{5585F39F-1DE1-4DB1-B227-292E55E5433A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB3085538) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{5A84393A-E440-48A1-BB99-AD1244AC0C35}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft OneNote 2016 (KB5002714) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{5A955DB5-C383-45D3-9A19-EB5C19147464}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Visio 2016 (KB5002634) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{676A222D-7381-4C0D-B571-082AD7E0DF0C}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Excel 2016 (KB5002758) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{7BE265D1-AE35-45C0-AB68-78F5F6FBFD4F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Project 2016 (KB5002652) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{8BE28313-0C15-4C31-B5F8-08959E44EA66}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4011634) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{8F860F8B-E4DC-4F1E-90EB-0EA6779C6367}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft PowerPoint 2016 (KB5002765) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{A495FE4A-1DA6-4A3B-812A-0074014C92C2}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Skype for Business 2016 (KB5002567) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{AC7565EF-E108-49D4-9F46-5A1AEC72B27B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Access 2016 (KB5002701) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{AC7EBEF3-69BA-479A-8FC1-AA9B6FD37A53}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB4464587) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{AD26BCAC-856E-4AE9-B86A-32D08FB5F60E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft OneDrive for Business (KB4022219) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{BEE8A3FB-432A-4F06-8A38-F12ADB043344}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002655) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{CC7EAB7C-9F56-4C84-B751-B54407DDEEB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002756) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{CF5A8A5F-059C-4187-8843-868D5A00807E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft Office 2016 (KB2920678) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{D6AE0D54-13A7-4B0D-A862-8AEF7D4796A6}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002573) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0000-1000-0000000FF1CE}_Office16.PROPLUS_{FBDF2571-2C0F-406E-9A78-B6FBD61209CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office Shared 32-bit MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250813",
+      "registry_key": "{90160000-00C1-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Excel 2016 (KB5002758) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{7BE265D1-AE35-45C0-AB68-78F5F6FBFD4F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Microsoft OneDrive for Business (KB4022219) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{BEE8A3FB-432A-4F06-8A38-F12ADB043344}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002756) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{CF5A8A5F-059C-4187-8843-868D5A00807E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002573) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00C1-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{FBDF2571-2C0F-406E-9A78-B6FBD61209CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office OSM MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250409",
+      "registry_key": "{90160000-00E1-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00E1-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Office OSM UX MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250409",
+      "registry_key": "{90160000-00E2-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-00E2-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Skype for Business MUI (Spanish) 2016",
+      "version": "16.0.4266.1001",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250813",
+      "registry_key": "{90160000-012B-0C0A-1000-0000000FF1CE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Word 2016 (KB5002763) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-012B-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{0DF22ED2-2423-4CD1-AAB9-DB5DE5EBB44F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Update for Skype for Business 2016 (KB5002567) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-012B-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{AC7565EF-E108-49D4-9F46-5A1AEC72B27B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Security Update for Microsoft Office 2016 (KB5002669) 64-Bit Edition",
+      "version": "Unknown",
+      "publisher": "Microsoft",
+      "install_date": "Unknown",
+      "registry_key": "{90160000-012B-0C0A-1000-0000000FF1CE}_Office16.PROPLUS_{B1A792C6-3E74-4CF3-8319-4D6724BAABB3}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 Utility Scripts (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{964D8116-645C-40B3-9684-C5C3FF85AD46}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 Documentation (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{9F53120C-0B23-4779-AFCB-4B4D60CD426A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.13.3 Add to Path (64-bit)",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{AA6AB119-75B4-4D0B-9854-F338CC7EF8A8}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 Test Suite (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{B2426479-2AAE-43D3-AEDA-0B2DAA813883}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2019 X64 Debug Runtime - 14.29.30157",
+      "version": "14.29.30157",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{B2D2DB83-DEF0-4638-A634-025F645DFBDB}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.13.3 pip Bootstrap (64-bit)",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{B7776C12-43C7-41A6-92C3-82208E0E9357}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.13.3 Test Suite (64-bit)",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{B9BD620A-192D-4190-BDF0-13096138323F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Update Health Tools",
+      "version": "5.72.0.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250313",
+      "registry_key": "{C6FD611E-7EFE-488C-A0E0-974C09EF6473}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2012 x64 Minimum Runtime - 11.0.61030",
+      "version": "11.0.61030",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{CF2BEA3C-26EA-32F8-AA9B-331F7E34BA97}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Windows Subsystem for Linux",
+      "version": "2.5.7.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250616",
+      "registry_key": "{D726B73B-1F51-4144-943E-09BFA1C409D0}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Java(TM) SE Development Kit 17.0.12 (64-bit)",
+      "version": "17.0.12.0",
+      "publisher": "Oracle Corporation",
+      "install_date": "20250428",
+      "registry_key": "{DA08718E-972A-58E7-AE7E-C45114C82E13}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 pip Bootstrap (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{E3557C13-FAB9-4AB4-A3A6-E7AD742DCA92}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.42.34438",
+      "version": "14.42.34438",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{E528AD94-12D7-42C4-91A3-908BE28E9BD2}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.13.3 Development Libraries (64-bit)",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{E714459A-0199-454E-943A-2B8386AC2593}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.13.3 Executables (64-bit)",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{F77437C3-BF8F-48FE-9DF1-129ADC592A76}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Epic Games Launcher Prerequisites (x64)",
+      "version": "1.0.0.0",
+      "publisher": "Epic Games, Inc.",
+      "install_date": "20250314",
+      "registry_key": "{F9C5C994-F6B9-4D75-B3E7-AD01B84073E9}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.11.8 Add to Path (64-bit)",
+      "version": "3.11.8150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250330",
+      "registry_key": "{FDBB0F2E-A99A-425B-A322-AD6949EE3404}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python 3.13.3 Documentation (64-bit)",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{FE4D3CAA-0217-4263-8FCB-92ABD893823B}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "PowerShell 7-x64",
+      "version": "7.5.2.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250716",
+      "registry_key": "{FEC29E44-BB89-4669-91C1-7E93C3EE177A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Visual Studio Build Tools 2019",
+      "version": "16.11.45",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "8997797b",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Brave",
+      "version": "139.1.81.135",
+      "publisher": "Los creadores de Brave",
+      "install_date": "20250813",
+      "registry_key": "BraveSoftware Brave-Browser",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Driver Booster 12",
+      "version": "12.3.0",
+      "publisher": "IObit",
+      "install_date": "20250316",
+      "registry_key": "Driver Booster_is1",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Dropbox",
+      "version": "230.4.8797",
+      "publisher": "Dropbox, Inc.",
+      "install_date": "Unknown",
+      "registry_key": "Dropbox",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Google Chrome",
+      "version": "139.0.7258.67",
+      "publisher": "Google LLC",
+      "install_date": "20250813",
+      "registry_key": "Google Chrome",
+      "type": "Installed Software"
+    },
+    {
+      "name": "IntelliJ IDEA Community Edition 2025.1",
+      "version": "251.23774.435",
+      "publisher": "JetBrains s.r.o.",
+      "install_date": "Unknown",
+      "registry_key": "IntelliJ IDEA Community Edition 2025.1",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Edge",
+      "version": "139.0.3405.86",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250811",
+      "registry_key": "Microsoft Edge",
+      "type": "Installed Software"
+    },
+    {
+      "name": "WebView2 Runtime de Microsoft Edge",
+      "version": "138.0.3351.121",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250804",
+      "registry_key": "Microsoft EdgeWebView",
+      "type": "Installed Software"
+    },
+    {
+      "name": "OpenAL",
+      "version": "Unknown",
+      "publisher": "Unknown",
+      "install_date": "Unknown",
+      "registry_key": "OpenAL",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Steam",
+      "version": "2.10.91.91",
+      "publisher": "Valve Corporation",
+      "install_date": "Unknown",
+      "registry_key": "Steam",
+      "type": "Installed Software"
+    },
+    {
+      "name": "TLauncher",
+      "version": "2.9316",
+      "publisher": "TLauncher Inc.",
+      "install_date": "Unknown",
+      "registry_key": "TLauncher",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40664",
+      "version": "12.0.40664.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "Unknown",
+      "registry_key": "{042d26ef-3dbe-4c25-95d3-4c1b11b235a7}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Universal CRT Redistributable",
+      "version": "10.0.26624",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{0460C87B-7F4C-3170-FAC9-B7A6AE5CE4E9}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Dropbox Update Helper",
+      "version": "1.3.983.1",
+      "publisher": "Dropbox, Inc.",
+      "install_date": "20250314",
+      "registry_key": "{099218A5-A723-43DC-8DB5-6173656A1E94}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Acer Jumpstart",
+      "version": "3.5.22220.20",
+      "publisher": "Acer",
+      "install_date": "20250313",
+      "registry_key": "{0C5ED25A-B8D1-4E71-BFCB-6B370A4EA19C}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "McAfee Safe Connect",
+      "version": "2.16.2",
+      "publisher": "McAfee, LLC.",
+      "install_date": "20250701",
+      "registry_key": "{1247C216-36CA-4664-A31F-7746E7F90B59}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148",
+      "version": "9.0.30729.4148",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{1F1C2DFC-2D24-3E06-BCB8-725134ADF989}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Acer Configuration Manager",
+      "version": "2.9.25180",
+      "publisher": "Acer",
+      "install_date": "20250711",
+      "registry_key": "{22165EE8-F79D-4400-A6FB-8E35391B8BEF}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030",
+      "version": "11.0.61030.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "Unknown",
+      "registry_key": "{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "WebAdvisor de McAfee",
+      "version": "4.1.1.1058",
+      "publisher": "McAfee, LLC",
+      "install_date": "Unknown",
+      "registry_key": "{35ED3F83-4BDC-4c44-8EC6-6A8301C7413A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Launcher Prerequisites (x64)",
+      "version": "1.0.0.0",
+      "publisher": "Epic Games, Inc.",
+      "install_date": "Unknown",
+      "registry_key": "{43a03b9c-4770-409c-a999-587b60700b63}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Java Auto Updater",
+      "version": "2.8.441.7",
+      "publisher": "Oracle Corporation",
+      "install_date": "20250315",
+      "registry_key": "{4A03706F-666A-4037-7777-5F2748764D10}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "McAfee Safe Connect",
+      "version": "2.16.2",
+      "publisher": "McAfee, LLC.",
+      "install_date": "Unknown",
+      "registry_key": "{4f3d1f14-cb03-4905-9e52-8942e08174cb}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Python Launcher",
+      "version": "3.13.3150.0",
+      "publisher": "Python Software Foundation",
+      "install_date": "20250515",
+      "registry_key": "{564F1D64-0AA9-48DD-B610-19E57A6A014D}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "ExpressVPN",
+      "version": "2.5.22300.30",
+      "publisher": "Acer",
+      "install_date": "20250313",
+      "registry_key": "{5B1D5290-DC0D-43D1-8220-8BB29BDDA0BE}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.42.34438",
+      "version": "14.42.34438",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{5D0C4511-3CA1-4FF8-A4BA-C0E1957ABEEA}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual Studio Setup Configuration",
+      "version": "3.7.2182.35401",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{6AC5612A-D067-44B9-9C8E-2C1B3473B429}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40664",
+      "version": "12.0.40664",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{8122DAB1-ED4D-3676-BB0A-CA368196543E}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "PowerShell 7.5.2.0-x64",
+      "version": "7.5.2.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "Unknown",
+      "registry_key": "{8b345841-1c68-4b71-a1c2-63a39fffa324}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161",
+      "version": "9.0.30729.6161",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250329",
+      "registry_key": "{9BE518E6-ECC6-35A9-88E4-87755C07200F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40664",
+      "version": "12.0.40664.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "Unknown",
+      "registry_key": "{9dff3540-fc85-4ed5-ac84-9e3c7fd8bece}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2022 X86 Additional Runtime - 14.42.34438",
+      "version": "14.42.34438",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{A5592FEF-F948-4BA6-A066-8BBFC2DC7EE1}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "vs_FileTracker_Singleton",
+      "version": "16.11.34827",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{AB0010C0-CA62-40C7-BDED-DB2514BDCF19}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030",
+      "version": "11.0.61030",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{B175520C-86A2-35A7-8619-86DC379688B9}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.42.34438",
+      "version": "14.42.34438.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "Unknown",
+      "registry_key": "{b49c10dd-4d54-45f8-ad13-fa25704456a4}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.42.34438",
+      "version": "14.42.34438.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "Unknown",
+      "registry_key": "{ba10fda9-f731-441f-a999-000bbb7ceec2}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2012 x86 Minimum Runtime - 11.0.61030",
+      "version": "11.0.61030",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{BD95A8CD-1D9F-35AD-981A-3E7925026EBB}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2019 X86 Debug Runtime - 14.29.30157",
+      "version": "14.29.30157",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{C45C7D61-1241-4033-BF55-3F7A99E06DCA}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.61030",
+      "version": "11.0.61030.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "Unknown",
+      "registry_key": "{ca67548a-5ebe-413a-b50c-4b9ceb6d66c6}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40664",
+      "version": "12.0.40664",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{D401961D-3A20-3AC7-943B-6139D5BD490A}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft XNA Framework Redistributable 4.0 Refresh",
+      "version": "4.0.30901.0",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250316",
+      "registry_key": "{D69C8EDE-BBC5-436B-8E0E-C5A6D311CF4F}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual Studio Setup WMI Provider",
+      "version": "3.7.2182.35401",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250327",
+      "registry_key": "{E281F6E2-136B-4AF0-895B-253279711697}",
+      "type": "Installed Software"
+    },
+    {
+      "name": "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219",
+      "version": "10.0.40219",
+      "publisher": "Microsoft Corporation",
+      "install_date": "20250329",
+      "registry_key": "{F0C3E5D1-1ADE-321E-8167-68EF0DE699A5}",
+      "type": "Installed Software"
+    }
+  ]
+}
