@@ -1,0 +1,43 @@
+ForenseCTL Linux - Información de Versión
+==========================================
+
+Versión: 1.0
+Fecha de Compilación: 2025-01-14
+Plataforma: Linux (Multiplataforma)
+Tipo: Distribución Standalone
+
+Archivos Incluidos:
+- forensectl_linux.py     : Script principal de ForenseCTL Linux
+- install_linux.sh        : Instalador automático para Linux
+- README.md              : Documentación completa
+- LICENSE                : Licencia MIT
+- VERSION_INFO.txt       : Este archivo
+
+Requisitos del Sistema:
+- Linux Kernel 3.0+ (Recomendado: 5.0+)
+- Python 3.6+ (Recomendado: 3.8+)
+- psutil (se instala automáticamente)
+- 2GB RAM mínimo (Recomendado: 4GB+)
+- 500MB espacio libre (Recomendado: 2GB+)
+
+Distribuciones Soportadas:
+- Ubuntu/Debian (apt/dpkg)
+- CentOS/RHEL/Fedora (yum/dnf/rpm)
+- Arch Linux/Manjaro (pacman)
+- openSUSE (zypper/rpm)
+- Otras distribuciones (funcionalidad básica)
+
+Instalación Rápida:
+1. chmod +x install_linux.sh
+2. sudo ./install_linux.sh
+3. forensectl
+
+Ejecución Directa:
+1. python3 forensectl_linux.py
+
+Soporte:
+- GitHub: https://github.com/ismaiars/ForenseCTL
+- Documentación: README.md
+- Licencia: MIT License
+
+Desarrollado para la comunidad de Blue Team, DFIR y Linux

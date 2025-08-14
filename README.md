@@ -1,45 +1,59 @@
-# 🔍 ForenseCTL - Sistema de Análisis Forense Digital
+# 🔍 ForenseCTL - Sistema de Análisis Forense Digital Multiplataforma
 
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
 [![Windows](https://img.shields.io/badge/platform-Windows-0078D4?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![Linux](https://img.shields.io/badge/platform-Linux-FCC624?logo=linux&logoColor=black)](https://www.linux.org/)
 [![Status](https://img.shields.io/badge/status-Production%20Ready-00C851?logo=checkmarx&logoColor=white)](https://github.com/ismaiars/ForenseCTL)
-[![Executable](https://img.shields.io/badge/Executable-Ready-FF6900?logo=files&logoColor=white)](ForenseCTL_Distribution/)
-[![Size](https://img.shields.io/badge/Size-8.44MB-blue?logo=download&logoColor=white)](ForenseCTL_Distribution/ForenseCTL.exe)
+[![Windows Executable](https://img.shields.io/badge/Windows%20EXE-8.44MB-FF6900?logo=windows&logoColor=white)](ForenseCTL_Distribution/)
+[![Linux Script](https://img.shields.io/badge/Linux%20Script-Ready-FCC624?logo=linux&logoColor=black)](ForenseCTL_Linux_Distribution/)
 
 </div>
 
 ## 🎯 Descripción
 
-**ForenseCTL** es un sistema completo de análisis forense digital optimizado en un **ejecutable standalone de 8.44MB** 🚀. Diseñado para profesionales de ciberseguridad, equipos DFIR y analistas forenses, proporciona un ciclo completo de investigación forense: **recopilación → análisis → reporte → cadena de custodia**.
+**ForenseCTL** es un sistema completo de análisis forense digital **multiplataforma** 🚀. Disponible como **ejecutable standalone para Windows (8.44MB)** y **script Python para Linux**. Diseñado para profesionales de ciberseguridad, equipos DFIR y analistas forenses, proporciona un ciclo completo de investigación forense: **recopilación → análisis → reporte → cadena de custodia**.
 
 ### 🌟 **¿Por qué ForenseCTL?**
 
-✅ **Ejecutable Único**: Sin instalaciones complejas, solo ejecutar  
-✅ **Análisis Completo**: Recopilación automática de evidencia del sistema Windows  
+✅ **Multiplataforma**: Windows (ejecutable) y Linux (script Python)  
+✅ **Sin Instalaciones Complejas**: Ejecutable único o script directo  
+✅ **Análisis Completo**: Recopilación automática de evidencia del sistema  
 ✅ **Reportes Profesionales**: HTML y JSON con diseño técnico-profesional  
 ✅ **Cadena de Custodia**: Registro automático de todas las acciones  
 ✅ **Interfaz Intuitiva**: Menú interactivo fácil de usar  
-✅ **Portable**: Funciona desde cualquier ubicación sin dependencias
+✅ **Portable**: Funciona desde cualquier ubicación sin dependencias complejas
 
-## ✨ Funcionalidades Completas del Sistema
+## ✨ Funcionalidades Completas del Sistema Multiplataforma
 
 ### 🎯 **Núcleo del Sistema**
 - 📁 **Gestión Completa de Casos**: Creación, administración y seguimiento de casos forenses
-- 🔍 **Recopilación Automática**: Extracción de artefactos del sistema Windows en tiempo real
-- ⚙️ **Análisis Forense Integral**: Análisis completo del sistema, procesos y red
-- 📄 **Reportes Profesionales**: Generación automática en HTML y JSON
+- 🔍 **Recopilación Automática**: Extracción de artefactos del sistema Windows y Linux en tiempo real
+- ⚙️ **Análisis Forense Integral**: Análisis completo del sistema, procesos y red multiplataforma
+- 📄 **Reportes Profesionales**: Generación automática en HTML y JSON adaptados por plataforma
 - 🔗 **Cadena de Custodia**: Registro automático y completo de todas las acciones
+- 🌐 **Soporte Multiplataforma**: Windows (ejecutable) y Linux (script Python)
 
-### 🖥️ **Recopilación de Evidencia**
+### 🖥️ **Recopilación de Evidencia Multiplataforma**
+#### 🌐 **Común (Windows & Linux)**
 - 💻 **Información del Sistema**: Hardware, OS, arquitectura, usuarios activos
 - 🔄 **Procesos en Ejecución**: Lista completa con PID, memoria, CPU y rutas
 - 🌐 **Conexiones de Red**: TCP/UDP activas, puertos locales y remotos
 - 📦 **Software Instalado**: Programas, versiones y ubicaciones de instalación
 - 📂 **Archivos del Sistema**: Logs críticos, archivos temporales y de configuración
+
+#### 🖥️ **Específico Windows**
 - 🗃️ **Registro de Windows**: Claves importantes del sistema y aplicaciones
+- 🔧 **Servicios de Windows**: Servicios activos, inactivos y configuraciones
+- 📋 **Event Logs**: Registros de eventos del sistema y aplicaciones
+
+#### 🐧 **Específico Linux**
+- 📦 **Gestión de Paquetes**: Paquetes instalados (apt, yum, pacman, etc.)
+- 🔧 **Servicios systemd**: Servicios activos, inactivos y configuraciones
+- 📁 **Configuraciones del Sistema**: Archivos críticos de configuración
+- 📝 **Logs del Sistema**: Syslog, auth.log, kern.log y otros logs críticos
 
 ### 📊 **Análisis y Reportes**
 - 📈 **Análisis Estadístico**: Métricas detalladas del sistema y evidencia
@@ -55,11 +69,11 @@
 - 🔒 **Seguridad**: Manejo seguro de evidencia con verificación de integridad
 - 🖥️ **Interfaz Intuitiva**: Menú interactivo con navegación fácil y clara
 
-## 🚀 Instalación y Uso
+## 🚀 Instalación y Uso Multiplataforma
 
-### 📦 **Ejecutable Standalone (Recomendado)**
+### 🖥️ **Windows - Ejecutable Standalone (Recomendado)**
 
-**¡La forma más fácil de usar ForenseCTL!** 🎯
+**¡La forma más fácil de usar ForenseCTL en Windows!** 🎯
 
 1. **📥 Descargar**: Navega a la carpeta `ForenseCTL_Distribution/`
 2. **▶️ Ejecutar**: Doble clic en `ForenseCTL.exe` o desde terminal:
@@ -69,8 +83,26 @@
    ```
 3. **🎉 ¡Listo!**: El sistema se iniciará automáticamente
 
+### 🐧 **Linux - Script Python**
+
+**¡ForenseCTL ahora disponible para Linux!** 🚀
+
+1. **📥 Descargar**: Navega a la carpeta `ForenseCTL_Linux_Distribution/`
+2. **🔧 Instalación Automática**:
+   ```bash
+   cd ForenseCTL_Linux_Distribution
+   chmod +x install_linux.sh
+   sudo ./install_linux.sh
+   forensectl
+   ```
+3. **⚡ Ejecución Directa**:
+   ```bash
+   python3 forensectl_linux.py
+   ```
+
 ### 🖥️ **Requisitos del Sistema**
 
+#### Windows
 | Componente | Mínimo | Recomendado |
 |------------|--------|-------------|
 | 🖥️ **OS** | Windows 10 | Windows 11 |
@@ -78,10 +110,20 @@
 | 💿 **Disco** | 1GB libre | 5GB+ |
 | 👤 **Permisos** | Usuario | Administrador* |
 
-*_Administrador requerido para recopilación completa de evidencia_
+#### Linux
+| Componente | Mínimo | Recomendado |
+|------------|--------|-------------|
+| 🐧 **OS** | Linux Kernel 3.0+ | Linux Kernel 5.0+ |
+| 🐍 **Python** | 3.6+ | 3.8+ |
+| 💾 **RAM** | 2GB | 4GB+ |
+| 💿 **Disco** | 500MB libre | 2GB+ |
+| 👤 **Permisos** | Usuario | Root/sudo* |
+
+*_Permisos elevados requeridos para recopilación completa de evidencia_
 
 ### ⚡ **Inicio Rápido**
 
+#### Windows
 ```cmd
 # Método 1: Ejecutar directamente
 ForenseCTL_Distribution\ForenseCTL.exe
@@ -94,10 +136,40 @@ cd ForenseCTL_Distribution
 ForenseCTL_Distribution\install.bat
 ```
 
+#### Linux
+```bash
+# Método 1: Instalación global
+sudo ./install_linux.sh
+forensectl
+
+# Método 2: Ejecución directa
+python3 forensectl_linux.py
+
+# Método 3: Inicio rápido
+./quick_start.sh
+```
+
+## 📦 **Distribuciones Disponibles**
+
+### 🖥️ **Windows Distribution**
+- **Ubicación**: `ForenseCTL_Distribution/`
+- **Archivo Principal**: `ForenseCTL.exe` (8.44MB)
+- **Instalador**: `install.bat`
+- **Documentación**: `README.md`
+
+### 🐧 **Linux Distribution**
+- **Ubicación**: `ForenseCTL_Linux_Distribution/`
+- **Archivo Principal**: `forensectl_linux.py`
+- **Instalador**: `install_linux.sh`
+- **Inicio Rápido**: `quick_start.sh`
+- **Documentación**: `README.md`, `docs/QUICK_INSTALL.md`
+- **Ejemplos**: `examples/system_check.py`
+
 ### 🔧 **Instalación desde Código Fuente (Desarrolladores)**
 
+#### Windows
 <details>
-<summary>📋 Instrucciones para desarrolladores</summary>
+<summary>📋 Instrucciones para desarrolladores Windows</summary>
 
 ```bash
 # 1. Clonar repositorio
@@ -114,6 +186,29 @@ python forensectl_standalone.py
 **Dependencias incluidas automáticamente:**
 - `psutil` - Información del sistema
 - `platform` - Detalles de la plataforma
+- `json`, `datetime`, `pathlib` - Utilidades estándar
+
+</details>
+
+#### Linux
+<details>
+<summary>📋 Instrucciones para desarrolladores Linux</summary>
+
+```bash
+# 1. Clonar repositorio
+git clone https://github.com/ismaiars/ForenseCTL.git
+cd ForenseCTL
+
+# 2. Instalar dependencias
+pip3 install psutil
+
+# 3. Ejecutar versión Linux
+python3 forensectl_linux.py
+```
+
+**Dependencias requeridas:**
+- `psutil` - Información del sistema Linux
+- `platform` - Detalles de la plataforma (incluido en Python)
 - `json`, `datetime`, `pathlib` - Utilidades estándar
 
 </details>
@@ -484,6 +579,39 @@ ForenseCTL_Distribution\ForenseCTL.exe
 - ✅ Respetar la privacidad y derechos de terceros
 - ✅ Usar la herramienta de manera ética y legal
 
+## 📁 **Estructura del Proyecto**
+
+```
+ForenseCTL/
+├── 📁 ForenseCTL_Distribution/          # 🖥️ Distribución Windows
+│   ├── ForenseCTL.exe                   # Ejecutable principal (8.44MB)
+│   ├── install.bat                      # Instalador Windows
+│   ├── README.md                        # Documentación Windows
+│   └── forensics_workspace/             # Espacio de trabajo
+├── 📁 ForenseCTL_Linux_Distribution/    # 🐧 Distribución Linux
+│   ├── forensectl_linux.py              # Script principal Linux
+│   ├── install_linux.sh                 # Instalador Linux
+│   ├── quick_start.sh                   # Inicio rápido
+│   ├── requirements.txt                 # Dependencias Python
+│   ├── docs/                            # Documentación adicional
+│   ├── examples/                        # Scripts de ejemplo
+│   └── README.md                        # Documentación Linux
+├── 📄 README.md                         # Documentación principal
+├── 📄 LICENSE                           # Licencia MIT
+└── 📦 ForenseCTL_Linux_v1.0_YYYYMMDD.zip # Paquete distribución Linux
+```
+
+## 🆕 **Novedades de la Versión**
+
+### ✨ **v1.0 - Soporte Multiplataforma**
+- 🐧 **Nuevo**: Soporte completo para Linux
+- 🖥️ **Mejorado**: Optimización del ejecutable Windows
+- 📦 **Nuevo**: Gestión de paquetes Linux (apt, yum, pacman)
+- 🔧 **Nuevo**: Análisis de servicios systemd
+- 📁 **Nuevo**: Análisis de configuraciones Linux
+- 🚀 **Nuevo**: Scripts de instalación automática
+- 📚 **Mejorado**: Documentación multiplataforma
+
 ## 📄 Licencia
 
 ### 📜 **Licencia MIT**
@@ -514,21 +642,39 @@ Este proyecto está licenciado bajo la **Licencia MIT** - consulta el archivo [L
 
 ---
 
+## 📞 Soporte y Contacto
+
+### 🐛 **Reportar Problemas**
+- **GitHub Issues**: [Crear nuevo issue](https://github.com/ismaiars/ForenseCTL/issues)
+- **Email**: soporte@forensectl.com
+- **Documentación**: Wiki del proyecto
+
+### 🤝 **Contribuciones**
+¡Las contribuciones son bienvenidas! Por favor:
+1. Fork el repositorio
+2. Crea una rama para tu feature
+3. Commit tus cambios
+4. Push a la rama
+5. Abre un Pull Request
+
+---
+
 <div align="center">
 
-## 🎯 **ForenseCTL Standalone**
+## 🎯 **ForenseCTL Multiplataforma**
 
 **Sistema Completo de Análisis Forense Digital**  
 *Desarrollado para profesionales de ciberseguridad y equipos DFIR*
 
-### 🚀 **8.44MB • Portable • Sin Dependencias • Listo para Usar**
+### 🚀 **Windows: 8.44MB • Linux: Script Python • Portable • Sin Dependencias**
 
 ---
 
 **Desarrollado con ❤️ para la comunidad de Blue Team y DFIR**
 
 [![⭐ Star en GitHub](https://img.shields.io/badge/⭐-Star%20en%20GitHub-yellow?style=for-the-badge)](https://github.com/ismaiars/ForenseCTL)
-[![📥 Descargar](https://img.shields.io/badge/📥-Descargar%20Ejecutable-green?style=for-the-badge)](ForenseCTL_Distribution/ForenseCTL.exe)
+[![📥 Windows](https://img.shields.io/badge/📥-Windows%20EXE-0078D4?style=for-the-badge&logo=windows)](ForenseCTL_Distribution/ForenseCTL.exe)
+[![📥 Linux](https://img.shields.io/badge/📥-Linux%20Script-FCC624?style=for-the-badge&logo=linux)](ForenseCTL_Linux_Distribution/)
 [![📖 Documentación](https://img.shields.io/badge/📖-Documentación-blue?style=for-the-badge)](README.md)
 
 </div>

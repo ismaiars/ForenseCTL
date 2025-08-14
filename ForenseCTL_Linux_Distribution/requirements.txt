@@ -1,0 +1,5 @@
+# ForenseCTL Linux - Dependencias Python
+# =====================================
+# Instalar con: pip3 install -r requirements.txt
+
+psutil>=5.8.0
