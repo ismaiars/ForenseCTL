@@ -1,312 +1,534 @@
-# ForenseCTL - Framework de Análisis Forense Digital
+# 🔍 ForenseCTL - Sistema de Análisis Forense Digital
+
+<div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Windows](https://img.shields.io/badge/platform-Windows-blue.svg)](https://www.microsoft.com/windows)
-[![Status](https://img.shields.io/badge/status-Production%20Ready-green.svg)](https://github.com/ismaiars/ForenseCTL)
+[![Windows](https://img.shields.io/badge/platform-Windows-0078D4?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![Status](https://img.shields.io/badge/status-Production%20Ready-00C851?logo=checkmarx&logoColor=white)](https://github.com/ismaiars/ForenseCTL)
+[![Executable](https://img.shields.io/badge/Executable-Ready-FF6900?logo=files&logoColor=white)](ForenseCTL_Distribution/)
+[![Size](https://img.shields.io/badge/Size-8.44MB-blue?logo=download&logoColor=white)](ForenseCTL_Distribution/ForenseCTL.exe)
 
-## 🔍 Descripción
+</div>
 
-ForenseCTL es un framework completo de análisis forense digital diseñado para profesionales de ciberseguridad, equipos DFIR y analistas forenses. Proporciona un ciclo completo de investigación: **recopilación → análisis → reporte → cadena de custodia**.
+## 🎯 Descripción
 
-## ✨ Características Principales
+**ForenseCTL** es un sistema completo de análisis forense digital optimizado en un **ejecutable standalone de 8.44MB** 🚀. Diseñado para profesionales de ciberseguridad, equipos DFIR y analistas forenses, proporciona un ciclo completo de investigación forense: **recopilación → análisis → reporte → cadena de custodia**.
 
+### 🌟 **¿Por qué ForenseCTL?**
+
+✅ **Ejecutable Único**: Sin instalaciones complejas, solo ejecutar  
+✅ **Análisis Completo**: Recopilación automática de evidencia del sistema Windows  
+✅ **Reportes Profesionales**: HTML y JSON con diseño técnico-profesional  
+✅ **Cadena de Custodia**: Registro automático de todas las acciones  
+✅ **Interfaz Intuitiva**: Menú interactivo fácil de usar  
+✅ **Portable**: Funciona desde cualquier ubicación sin dependencias
+
+## ✨ Funcionalidades Completas del Sistema
+
+### 🎯 **Núcleo del Sistema**
 - 📁 **Gestión Completa de Casos**: Creación, administración y seguimiento de casos forenses
-- 🔍 **Recopilación Automática**: Extracción de artefactos del sistema (procesos, archivos, registro, red)
-- ⚙️ **Análisis Forense Avanzado**: Análisis de memoria, disco, timeline y detección de amenazas
-- 📄 **Reportes Multi-formato**: Generación de reportes en HTML, PDF y DOCX con lenguaje técnico-casual
-- 🔗 **Cadena de Custodia**: Registro completo y automático de todas las acciones realizadas
-- 📊 **Exportación de Datos**: Múltiples formatos de exportación (JSON, CSV) para análisis posterior
-- 🛠️ **Herramientas Integradas**: Verificación de integridad, limpieza y estadísticas del sistema
-- 🖥️ **Interfaz Interactiva**: Demo completo con menús intuitivos y navegación fácil
+- 🔍 **Recopilación Automática**: Extracción de artefactos del sistema Windows en tiempo real
+- ⚙️ **Análisis Forense Integral**: Análisis completo del sistema, procesos y red
+- 📄 **Reportes Profesionales**: Generación automática en HTML y JSON
+- 🔗 **Cadena de Custodia**: Registro automático y completo de todas las acciones
+
+### 🖥️ **Recopilación de Evidencia**
+- 💻 **Información del Sistema**: Hardware, OS, arquitectura, usuarios activos
+- 🔄 **Procesos en Ejecución**: Lista completa con PID, memoria, CPU y rutas
+- 🌐 **Conexiones de Red**: TCP/UDP activas, puertos locales y remotos
+- 📦 **Software Instalado**: Programas, versiones y ubicaciones de instalación
+- 📂 **Archivos del Sistema**: Logs críticos, archivos temporales y de configuración
+- 🗃️ **Registro de Windows**: Claves importantes del sistema y aplicaciones
+
+### 📊 **Análisis y Reportes**
+- 📈 **Análisis Estadístico**: Métricas detalladas del sistema y evidencia
+- 🎨 **Reportes HTML**: Diseño profesional con gráficos y tablas interactivas
+- 📋 **Exportación JSON**: Datos estructurados para análisis posterior
+- 🔍 **Búsqueda Avanzada**: Filtros por tipo de evidencia y criterios específicos
+- 📝 **Documentación Automática**: Generación de informes técnicos completos
+
+### 🛠️ **Herramientas Integradas**
+- ✅ **Verificación de Integridad**: Validación de archivos y evidencia
+- 🧹 **Limpieza del Sistema**: Eliminación segura de archivos temporales
+- 📈 **Monitoreo en Tiempo Real**: Estado del sistema y recursos
 - 🔒 **Seguridad**: Manejo seguro de evidencia con verificación de integridad
-- 📈 **Monitoreo**: Estado del sistema en tiempo real y estadísticas detalladas
+- 🖥️ **Interfaz Intuitiva**: Menú interactivo con navegación fácil y clara
 
-## 🚀 Instalación
+## 🚀 Instalación y Uso
 
-### Requisitos del Sistema
-- **Sistema Operativo**: Windows 10/11 (Probado y optimizado)
-- **Python**: 3.8 o superior
-- **RAM**: Mínimo 8GB (recomendado 16GB para análisis complejos)
-- **Espacio en Disco**: Mínimo 10GB libres
-- **Permisos**: Administrador para recopilación completa de evidencia
+### 📦 **Ejecutable Standalone (Recomendado)**
 
-### Instalación Paso a Paso
+**¡La forma más fácil de usar ForenseCTL!** 🎯
+
+1. **📥 Descargar**: Navega a la carpeta `ForenseCTL_Distribution/`
+2. **▶️ Ejecutar**: Doble clic en `ForenseCTL.exe` o desde terminal:
+   ```cmd
+   cd ForenseCTL_Distribution
+   ForenseCTL.exe
+   ```
+3. **🎉 ¡Listo!**: El sistema se iniciará automáticamente
+
+### 🖥️ **Requisitos del Sistema**
+
+| Componente | Mínimo | Recomendado |
+|------------|--------|-------------|
+| 🖥️ **OS** | Windows 10 | Windows 11 |
+| 💾 **RAM** | 4GB | 8GB+ |
+| 💿 **Disco** | 1GB libre | 5GB+ |
+| 👤 **Permisos** | Usuario | Administrador* |
+
+*_Administrador requerido para recopilación completa de evidencia_
+
+### ⚡ **Inicio Rápido**
+
+```cmd
+# Método 1: Ejecutar directamente
+ForenseCTL_Distribution\ForenseCTL.exe
+
+# Método 2: Desde PowerShell
+cd ForenseCTL_Distribution
+.\ForenseCTL.exe
+
+# Método 3: Usar install.bat (instalación automática)
+ForenseCTL_Distribution\install.bat
+```
+
+### 🔧 **Instalación desde Código Fuente (Desarrolladores)**
+
+<details>
+<summary>📋 Instrucciones para desarrolladores</summary>
 
 ```bash
-# 1. Clonar el repositorio
+# 1. Clonar repositorio
 git clone https://github.com/ismaiars/ForenseCTL.git
 cd ForenseCTL
 
-# 2. Crear entorno virtual (recomendado)
-python -m venv venv
-venv\Scripts\activate  # En Windows
-
-# 3. Instalar dependencias básicas
+# 2. Instalar dependencias
 pip install psutil platform-info datetime pathlib json
 
-# 4. Instalar dependencias para reportes (se instalan automáticamente)
-# reportlab, python-docx, beautifulsoup4, markdown
+# 3. Ejecutar desde código
+python forensectl_standalone.py
 ```
 
-### Dependencias Automáticas
+**Dependencias incluidas automáticamente:**
+- `psutil` - Información del sistema
+- `platform` - Detalles de la plataforma
+- `json`, `datetime`, `pathlib` - Utilidades estándar
 
-El sistema instala automáticamente las siguientes dependencias según sea necesario:
+</details>
 
-- **Reportes PDF**: `reportlab`
-- **Reportes DOCX**: `python-docx`
-- **Procesamiento HTML**: `beautifulsoup4`, `markdown`
-- **Análisis del Sistema**: `psutil`, `platform`
-- **Gestión de Archivos**: `pathlib`, `json`, `datetime`
+## 🚀 Guía de Uso Rápido
 
-### Verificación de Instalación
+### 🎯 **Primer Uso del Ejecutable**
 
-```bash
-# Ejecutar demo interactivo completo
-python demo_completo_interactivo.py
+1. **🚀 Iniciar ForenseCTL**:
+   ```cmd
+   cd ForenseCTL_Distribution
+   ForenseCTL.exe
+   ```
 
-# Ejecutar demo específico de reportes PDF/DOCX
-python demo_pdf_docx_alternativo.py
+2. **📋 Menú Principal** - Verás estas opciones:
+   ```
+   ╔══════════════════════════════════════════════════════════════╗
+   ║              FORENSECTL STANDALONE                           ║
+   ║           ANÁLISIS FORENSE DIGITAL                          ║
+   ╚══════════════════════════════════════════════════════════════╝
+   
+   [1] 📁 Gestión de Casos
+   [2] 🔍 Análisis Forense
+   [3] 📄 Generación de Reportes
+   [4] 🔗 Cadena de Custodia
+   [5] ⚙️  Configuración
+   [6] ❓ Ayuda
+   [0] 🚪 Salir
+   ```
 
-# Verificar componentes del sistema
-python -c "import forensectl; print('ForenseCTL instalado correctamente')"
+3. **🔥 Flujo de Trabajo Recomendado**:
+   - **Paso 1**: Crear nuevo caso (Opción 1)
+   - **Paso 2**: Ejecutar análisis forense (Opción 2)
+   - **Paso 3**: Generar reporte (Opción 3)
+   - **Paso 4**: Revisar cadena de custodia (Opción 4)
+
+### 📊 **Funcionalidades Principales**
+
+| Opción | Funcionalidad | Descripción |
+|--------|---------------|-------------|
+| 📁 **[1]** | **Gestión de Casos** | Crear, listar y administrar casos forenses |
+| 🔍 **[2]** | **Análisis Forense** | Recopilación automática de evidencia del sistema |
+| 📄 **[3]** | **Reportes** | Generación de informes HTML y JSON profesionales |
+| 🔗 **[4]** | **Cadena de Custodia** | Registro automático de todas las acciones |
+| ⚙️ **[5]** | **Configuración** | Ajustes del sistema y preferencias |
+| ❓ **[6]** | **Ayuda** | Documentación y guías de uso |
+
+## 🎯 Detalles de Funcionalidades
+
+### 📁 **[1] Gestión de Casos**
 ```
-
-## 🚀 Quick Start
-
-### Demo Rápido
-
-```bash
-# Ejecutar demo interactivo completo
-python demo_completo_interactivo.py
-
-# El demo incluye:
-# 1. Gestión de casos forenses
-# 2. Recopilación de evidencia del sistema
-# 3. Análisis forense avanzado
-# 4. Generación de reportes (HTML, PDF, DOCX)
-# 5. Cadena de custodia
-# 6. Exportación de datos
-# 7. Herramientas de administración
+🔹 Crear Nuevo Caso
+🔹 Listar Casos Existentes  
+🔹 Seleccionar Caso Activo
+🔹 Ver Información del Caso
+🔹 Eliminar Casos
 ```
+**Características:**
+- ✅ Metadatos completos (ID, investigador, organización, descripción)
+- ✅ Estructura de directorios automática
+- ✅ Validación de datos de entrada
+- ✅ Gestión de casos múltiples
 
-## 🎯 Funcionalidades Principales
+### 🔍 **[2] Análisis Forense**
+```
+🔹 Recopilar Información del Sistema
+🔹 Analizar Procesos en Ejecución
+🔹 Examinar Conexiones de Red
+🔹 Inventariar Software Instalado
+🔹 Extraer Archivos del Sistema
+🔹 Analizar Registro de Windows
+```
+**Datos Recopilados:**
+- 💻 **Sistema**: CPU, RAM, OS, arquitectura, usuarios
+- 🔄 **Procesos**: PID, nombre, memoria, CPU, ruta ejecutable
+- 🌐 **Red**: Conexiones TCP/UDP, puertos, IPs locales/remotas
+- 📦 **Software**: Programas instalados, versiones, ubicaciones
+- 📂 **Archivos**: Logs del sistema, archivos temporales, configuraciones
+- 🗃️ **Registro**: Claves críticas del sistema y aplicaciones
 
-### 📁 Gestión de Casos
-- Crear nuevos casos forenses
-- Listar y seleccionar casos existentes
-- Ver información detallada de casos
-- Actualizar metadatos de casos
-- Eliminar casos obsoletos
+### 📄 **[3] Generación de Reportes**
+```
+🔹 Reporte HTML Interactivo
+🔹 Exportación JSON Estructurada
+🔹 Resumen Ejecutivo
+🔹 Detalles Técnicos
+```
+**Características de Reportes:**
+- 🎨 **HTML**: Diseño profesional con CSS, tablas interactivas
+- 📋 **JSON**: Datos estructurados para análisis posterior
+- 📊 **Estadísticas**: Métricas detalladas del sistema
+- 🔍 **Búsqueda**: Filtros por tipo de evidencia
 
-### 🔍 Recopilación de Evidencia
-- **Información del Sistema**: Hardware, OS, usuarios
-- **Procesos Activos**: Lista completa de procesos en ejecución
-- **Conexiones de Red**: Conexiones TCP/UDP activas
-- **Programas Instalados**: Software instalado en el sistema
-- **Archivos del Sistema**: Archivos críticos y logs
-- **Registro de Windows**: Claves importantes del registro
+### 🔗 **[4] Cadena de Custodia**
+```
+🔹 Registro Automático de Acciones
+🔹 Historial Completo
+🔹 Búsqueda por Evidencia
+🔹 Estadísticas de Custodia
+🔹 Exportación de Registros
+```
+**Trazabilidad Completa:**
+- ⏰ **Timestamp**: Fecha y hora exacta de cada acción
+- 👤 **Usuario**: Identificación del investigador
+- 📝 **Descripción**: Detalle de la acción realizada
+- 🔒 **Integridad**: Hash de verificación de evidencia
 
-### ⚙️ Análisis Forense
-- **Análisis de Memoria**: Extracción y análisis de volcados de memoria
-- **Análisis de Disco**: Examen de sistemas de archivos y particiones
-- **Timeline Forense**: Construcción de líneas de tiempo de eventos
-- **Detección YARA**: Búsqueda de patrones maliciosos
-- **Análisis de Artefactos**: Extracción de artefactos específicos
-
-### 📄 Generación de Reportes
-- **Reportes Técnicos**: Análisis detallado para especialistas
-- **Reportes Ejecutivos**: Resúmenes para directivos
-- **Múltiples Formatos**: HTML, PDF, DOCX
-- **Lenguaje Técnico-Casual**: Accesible pero profesional
-- **Plantillas Personalizables**: Adaptables a diferentes necesidades
-
-### 🔗 Cadena de Custodia
-- Registro automático de todas las acciones
-- Historial completo de manipulación de evidencia
-- Búsqueda por evidencia específica
-- Estadísticas de custodia
-- Exportación de registros
-
-### 📊 Exportación y Herramientas
-- **Exportación de Datos**: JSON, CSV para análisis posterior
-- **Verificación de Integridad**: Validación de archivos
-- **Limpieza del Sistema**: Eliminación de archivos temporales
-- **Estadísticas Detalladas**: Métricas del caso y sistema
-- **Monitoreo en Tiempo Real**: Estado del sistema y componentes
+### ⚙️ **[5] Configuración y Herramientas**
+```
+🔹 Configuración del Sistema
+🔹 Verificación de Integridad
+🔹 Limpieza de Archivos Temporales
+🔹 Estadísticas del Sistema
+🔹 Monitoreo en Tiempo Real
+```
 
 ## 🔧 Solución de Problemas
 
-### Problemas Comunes de Instalación
+### 🚨 **Problemas Comunes del Ejecutable**
+
+#### ❌ **"El ejecutable no inicia"**
+```cmd
+# Verificar permisos de administrador
+# Clic derecho en ForenseCTL.exe → "Ejecutar como administrador"
+
+# O desde PowerShell como administrador:
+cd ForenseCTL_Distribution
+.\ForenseCTL.exe
+```
+
+#### ❌ **"Error de acceso denegado"**
+```cmd
+# Solución: Ejecutar como administrador
+# Necesario para recopilación completa de evidencia del sistema
+```
+
+#### ❌ **"No se pueden crear archivos"**
+```cmd
+# Verificar espacio en disco (mínimo 1GB)
+# Verificar permisos de escritura en la carpeta
+```
+
+#### ❌ **"El análisis no recopila datos"**
+```cmd
+# Verificar que Windows Defender no bloquee el ejecutable
+# Agregar excepción en el antivirus si es necesario
+```
+
+### ✅ **Verificación de Funcionamiento**
+
+```cmd
+# 1. Verificar que el ejecutable funciona
+ForenseCTL_Distribution\ForenseCTL.exe
+
+# 2. Crear caso de prueba
+# Usar opción [1] en el menú → "Crear Nuevo Caso"
+
+# 3. Ejecutar análisis básico
+# Usar opción [2] en el menú → "Recopilar Información del Sistema"
+
+# 4. Generar reporte de prueba
+# Usar opción [3] en el menú → "Generar Reporte HTML"
+```
+
+### 🛠️ **Solución de Problemas Avanzados**
+
+<details>
+<summary>🔍 Problemas de desarrollo (código fuente)</summary>
 
 #### Error: "No module named 'forensectl'"
 ```bash
-# Solución: Instalar el proyecto en modo desarrollo
-pip install -e .
+# Solución: Instalar dependencias
+pip install psutil platform-info
 ```
 
-#### Error: "No module named 'rich'" o dependencias faltantes
+#### Error: "forensectl_standalone.py not found"
 ```bash
-# Solución: Instalar dependencias básicas
-pip install click rich typer pydantic jinja2 pyyaml requests psutil pandas numpy cryptography sqlalchemy
+# El archivo fue eliminado después de la compilación
+# Recrear desde el repositorio si necesitas modificar el código
 ```
 
-#### Error: "forensectl command not found"
-```bash
-# Solución: Usar la ruta completa al CLI
-python forensectl/cli.py --help
-```
+</details>
 
-#### Error en pyproject.toml (Poetry)
-```bash
-# Solución: Usar setup.py en su lugar
-mv pyproject.toml pyproject.toml.bak
-pip install -e .
-```
+## 🏗️ Arquitectura del Sistema
 
-#### Error: "CaseManager.create_case() got an unexpected keyword argument 'timezone'"
-```bash
-# Este error ya está corregido en la versión actual
-# Si persiste, verificar que el archivo cli.py esté actualizado
-```
-
-### Verificación de Instalación
-
-```bash
-# Verificar que el CLI funciona
-python forensectl/cli.py --help
-
-# Crear un caso de prueba
-python forensectl/cli.py case init -c TEST-$(date +%Y%m%d)-ORG-DEMO -e "Test User" -o "Test Org" -d "Prueba de instalación"
-
-# Verificar estado del caso
-python forensectl/cli.py case status -c TEST-$(date +%Y%m%d)-ORG-DEMO
-```
-
-## 🏗️ Arquitectura del Proyecto
+### 📁 **Estructura Actual (Optimizada)**
 
 ```
 ForenseCTL/
-├── forensectl/                    # Framework principal
-│   ├── core/                      # Núcleo del sistema
-│   │   ├── case_manager.py        # Gestión de casos forenses
-│   │   ├── evidence_collector.py  # Recopilación de evidencia
-│   │   ├── chain_custody.py       # Cadena de custodia
-│   │   └── system_analyzer.py     # Análisis del sistema
-│   ├── analysis/                  # Módulos de análisis
-│   │   ├── memory_analyzer.py     # Análisis de memoria
-│   │   ├── disk_analyzer.py       # Análisis de disco
-│   │   ├── network_analyzer.py    # Análisis de red
-│   │   └── timeline_builder.py    # Constructor de timeline
-│   ├── reports/                   # Sistema de reportes
-│   │   ├── report_generator.py    # Generador principal
-│   │   ├── pdf_generator.py       # Generación PDF
-│   │   ├── docx_generator.py      # Generación DOCX
-│   │   └── html_generator.py      # Generación HTML
-│   ├── cli/                       # Interfaz CLI
-│   │   └── commands.py            # Comandos disponibles
-│   └── interactive_menu.py        # Menú interactivo
-├── templates/                     # Plantillas de reportes
-│   ├── executive_report_*.html    # Reportes ejecutivos
-│   └── technical_report_*.html    # Reportes técnicos
-├── cases/                         # Casos forenses (generados)
-├── analysis/                      # Análisis guardados
-├── reports/                       # Reportes generados
-├── demo_completo_interactivo.py   # Demo principal
-├── demo_pdf_docx_alternativo.py   # Demo de reportes
-└── README.md                      # Documentación
+├── 📄 LICENSE                     # Licencia MIT
+├── 📖 README.md                   # Documentación principal
+└── 📦 ForenseCTL_Distribution/    # 🎯 EJECUTABLE STANDALONE
+    ├── 🚀 ForenseCTL.exe          # Ejecutable principal (8.44MB)
+    ├── 📋 README.md               # Guía de uso del ejecutable
+    ├── ⚙️ install.bat             # Script de instalación automática
+    └── 📂 forensics_workspace/    # Espacio de trabajo
+        ├── 📁 cases/              # Casos forenses creados
+        ├── 🔍 evidence/           # Evidencia recopilada
+        ├── 📄 reports/            # Reportes generados
+        └── 🎨 templates/          # Plantillas de reportes
 ```
 
-## 📚 Documentación
+### 🔧 **Arquitectura Interna del Ejecutable**
 
-- [Guía de Instalación](docs/installation.md)
-- [Arquitectura del Sistema](docs/architecture.md)
-- [SOPs y Playbooks](docs/playbooks/)
-- [Guías Legales](docs/legal/)
-- [API Reference](docs/api/)
-- [Cómo Presentar en Portafolio](docs/portfolio-guide.md)
+```
+ForenseCTL.exe (Standalone)
+├── 🎯 Core System
+│   ├── CaseManager           # Gestión de casos forenses
+│   ├── RealSystemAnalyzer    # Análisis del sistema Windows
+│   ├── ChainOfCustody        # Cadena de custodia automática
+│   └── ReportGenerator       # Generación de reportes
+├── 🔍 Evidence Collection
+│   ├── System Information    # Hardware, OS, usuarios
+│   ├── Process Analysis      # Procesos en ejecución
+│   ├── Network Connections   # Conexiones TCP/UDP
+│   ├── Installed Software    # Programas instalados
+│   ├── System Files         # Archivos críticos y logs
+│   └── Windows Registry     # Claves del registro
+├── 📊 Report Generation
+│   ├── HTML Reports         # Reportes interactivos
+│   ├── JSON Export          # Datos estructurados
+│   ├── Executive Summary    # Resumen ejecutivo
+│   └── Technical Details    # Detalles técnicos
+└── 🖥️ Interactive Interface
+    ├── Main Menu            # Menú principal
+    ├── Case Management      # Gestión de casos
+    ├── Analysis Tools       # Herramientas de análisis
+    └── Configuration        # Configuración del sistema
+```
+
+### 🎯 **Ventajas de la Arquitectura Standalone**
+
+| Característica | Beneficio |
+|----------------|----------|
+| 🚀 **Ejecutable Único** | Sin dependencias externas, fácil distribución |
+| 📦 **Todo Incluido** | Todas las funcionalidades en un solo archivo |
+| 🔒 **Seguro** | Sin instalación, sin modificación del sistema |
+| 💾 **Ligero** | Solo 8.44MB, optimizado para rendimiento |
+| 🖥️ **Portable** | Funciona desde cualquier ubicación |
+| ⚡ **Rápido** | Inicio inmediato, sin tiempo de carga |
+
+### 🔄 **Flujo de Datos**
+
+```
+[Sistema Windows] → [Recopilación] → [Análisis] → [Reportes] → [Cadena de Custodia]
+       ↓                ↓              ↓           ↓              ↓
+   Hardware/SW    →  Evidencia   →  Procesado  →  HTML/JSON  →  Registro
+   Procesos/Red   →  Temporal    →  Validado   →  Exportado  →  Automático
+   Registro/Logs  →  Estructurado → Analizado  →  Formateado →  Trazable
+```
+
+## 📚 Documentación y Recursos
+
+### 📖 **Documentación Incluida**
+- 📋 **README.md Principal**: Guía completa del sistema
+- 📄 **README.md del Ejecutable**: Instrucciones específicas de uso
+- ❓ **Ayuda Integrada**: Opción [6] en el menú principal
+- 🔧 **Solución de Problemas**: Sección completa en este documento
+
+### 🎓 **Recursos de Aprendizaje**
+- 🖥️ **Interfaz Intuitiva**: Menú autoexplicativo con navegación guiada
+- 🔍 **Análisis Paso a Paso**: Flujo de trabajo estructurado
+- 📊 **Reportes de Ejemplo**: Generación automática para aprendizaje
+- 🔗 **Cadena de Custodia**: Registro automático para comprensión del proceso
 
 ## 🔒 Seguridad y Compliance
 
-- ✅ **Cadena de Custodia**: Firmas digitales opcionales (minisign/age)
-- ✅ **Mínimos Privilegios**: No root containers, RBAC
-- ✅ **Evidencia Read-Only**: Montajes RO, write blockers
-- ✅ **Cifrado**: TLS en tránsito, cifrado opcional en reposo
-- ✅ **PII Protection**: Enmascarado en reportes públicos
-- ✅ **Security Scanning**: Trivy, pip-audit, gitleaks
+### 🛡️ **Características de Seguridad**
+- ✅ **Cadena de Custodia Automática**: Registro completo de todas las acciones
+- ✅ **Verificación de Integridad**: Hash de archivos y evidencia
+- ✅ **Acceso Controlado**: Requiere permisos de administrador para análisis completo
+- ✅ **Evidencia Read-Only**: No modifica archivos del sistema original
+- ✅ **Registro Detallado**: Timestamp y trazabilidad completa
+- ✅ **Exportación Segura**: Formatos estándar (HTML, JSON) sin ejecutables
 
-## 🧪 Testing
+### 🔐 **Compliance Forense**
+- 📋 **Estándares**: Cumple con mejores prácticas de análisis forense digital
+- 🔍 **Trazabilidad**: Registro completo de la cadena de custodia
+- 📝 **Documentación**: Reportes detallados para uso legal
+- ⚖️ **Integridad**: Verificación de hash para validación de evidencia
 
-```bash
-# Ejecutar todas las pruebas
-make test
+## 🧪 Verificación y Testing
 
-# Pruebas específicas
-poetry run pytest tests/unit/
-poetry run pytest tests/integration/
-poetry run pytest tests/e2e/
+### ✅ **Verificación del Ejecutable**
 
-# Verificación de integridad
-make verify-integrity
+```cmd
+# 1. Verificar funcionamiento básico
+ForenseCTL_Distribution\ForenseCTL.exe
+
+# 2. Crear caso de prueba
+# Menú [1] → Crear Nuevo Caso → Datos de prueba
+
+# 3. Ejecutar análisis de prueba
+# Menú [2] → Recopilar Información del Sistema
+
+# 4. Generar reporte de prueba
+# Menú [3] → Generar Reporte HTML
+
+# 5. Verificar cadena de custodia
+# Menú [4] → Ver Historial de Acciones
 ```
 
-## 🤝 Contribución
+### 🔍 **Validación de Resultados**
+- 📊 **Reportes HTML**: Verificar que se generan correctamente
+- 📋 **Datos JSON**: Validar estructura y contenido
+- 🔗 **Cadena de Custodia**: Confirmar registro de acciones
+- 📁 **Estructura de Archivos**: Verificar organización de casos
 
-¡Las contribuciones son bienvenidas! Para contribuir al proyecto:
+## 🤝 Contribución y Desarrollo
 
-1. **Fork** el repositorio
-2. **Crea** una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`)
-3. **Desarrolla** tu código siguiendo las convenciones existentes
-4. **Prueba** tu código con los demos disponibles
-5. **Commit** tus cambios (`git commit -m 'Añadir nueva funcionalidad'`)
-6. **Push** a tu rama (`git push origin feature/nueva-funcionalidad`)
-7. **Abre** un Pull Request
+### 🚀 **¿Quieres Contribuir?**
 
-### Áreas de Contribución
+¡Las contribuciones son bienvenidas! El sistema está diseñado para ser fácilmente extensible:
 
-- **Nuevos Analizadores**: Módulos de análisis específicos
-- **Plantillas de Reportes**: Nuevos formatos y estilos
-- **Recopiladores de Evidencia**: Nuevas fuentes de datos
-- **Mejoras de UI**: Interfaz más intuitiva
-- **Documentación**: Guías y tutoriales
-- **Testing**: Casos de prueba y validación
+1. **🍴 Fork** el repositorio
+2. **🌿 Crea** una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`)
+3. **💻 Desarrolla** siguiendo las convenciones del código existente
+4. **🧪 Prueba** tu código con el ejecutable
+5. **📝 Commit** tus cambios (`git commit -m 'Añadir nueva funcionalidad'`)
+6. **📤 Push** a tu rama (`git push origin feature/nueva-funcionalidad`)
+7. **🔄 Abre** un Pull Request
+
+### 🎯 **Áreas de Contribución**
+
+| Área | Descripción | Dificultad |
+|------|-------------|------------|
+| 🔍 **Nuevos Analizadores** | Módulos de análisis específicos | 🟡 Media |
+| 🎨 **Plantillas de Reportes** | Nuevos formatos y estilos | 🟢 Fácil |
+| 📊 **Recopiladores de Evidencia** | Nuevas fuentes de datos | 🟡 Media |
+| 🖥️ **Mejoras de UI** | Interfaz más intuitiva | 🟢 Fácil |
+| 📚 **Documentación** | Guías y tutoriales | 🟢 Fácil |
+| 🧪 **Testing** | Casos de prueba y validación | 🟡 Media |
+| 🔧 **Optimización** | Mejoras de rendimiento | 🔴 Difícil |
+
+### 💡 **Ideas para Nuevas Funcionalidades**
+- 🌐 **Análisis de Red Avanzado**: Captura de tráfico, análisis de protocolos
+- 🔐 **Análisis de Malware**: Detección de patrones maliciosos
+- 📱 **Soporte Multi-plataforma**: Linux, macOS
+- 🎨 **Interfaz Gráfica**: GUI con Qt o Tkinter
+- ☁️ **Integración Cloud**: Análisis en la nube
+- 🤖 **IA/ML**: Detección automática de anomalías
 
 ## ⚖️ Consideraciones Legales
 
-**⚠️ IMPORTANTE**: Esta herramienta está diseñada exclusivamente para:
+### ⚠️ **USO RESPONSABLE**
 
-- Análisis forense autorizado en entornos controlados
-- Respuesta a incidentes en infraestructura propia
-- Investigaciones con autorización legal explícita
-- Entornos de laboratorio y educación
+**Esta herramienta está diseñada EXCLUSIVAMENTE para:**
 
-**El uso no autorizado de estas herramientas puede violar leyes locales e internacionales. Los usuarios son responsables de cumplir con todas las regulaciones aplicables.**
+✅ **Usos Autorizados:**
+- 🏢 Análisis forense autorizado en entornos corporativos
+- 🚨 Respuesta a incidentes en infraestructura propia
+- 🔍 Investigaciones con autorización legal explícita
+- 🎓 Entornos de laboratorio y educación
+- 🛡️ Auditorías de seguridad autorizadas
+
+❌ **Usos Prohibidos:**
+- 🚫 Análisis no autorizado de sistemas ajenos
+- 🚫 Violación de privacidad
+- 🚫 Actividades ilegales o maliciosas
+- 🚫 Uso sin consentimiento del propietario
+
+### 📋 **Responsabilidad del Usuario**
+
+**⚠️ IMPORTANTE**: El uso no autorizado de estas herramientas puede violar leyes locales e internacionales. Los usuarios son completamente responsables de:
+
+- ✅ Obtener autorización legal antes del uso
+- ✅ Cumplir con todas las regulaciones aplicables
+- ✅ Respetar la privacidad y derechos de terceros
+- ✅ Usar la herramienta de manera ética y legal
 
 ## 📄 Licencia
 
+### 📜 **Licencia MIT**
+
 Este proyecto está licenciado bajo la **Licencia MIT** - consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-### Resumen de la Licencia
-- ✅ Uso comercial permitido
-- ✅ Modificación permitida
-- ✅ Distribución permitida
-- ✅ Uso privado permitido
-- ❌ Sin garantía
-- ❌ Sin responsabilidad del autor
+| Permisos | Limitaciones | Condiciones |
+|----------|--------------|-------------|
+| ✅ Uso comercial | ❌ Sin garantía | 📋 Incluir licencia |
+| ✅ Modificación | ❌ Sin responsabilidad | 📋 Incluir copyright |
+| ✅ Distribución | | |
+| ✅ Uso privado | | |
 
 ## 🙏 Agradecimientos
 
-- **Python Community** - Por las excelentes librerías utilizadas
-- **ReportLab** - Generación de PDFs de alta calidad
-- **python-docx** - Creación de documentos DOCX
-- **psutil** - Información detallada del sistema
-- **BeautifulSoup** - Procesamiento HTML robusto
-- **Comunidad Forense Digital** - Por compartir conocimiento y mejores prácticas
+### 🛠️ **Tecnologías Utilizadas**
+- 🐍 **Python Community** - Por el excelente ecosistema de desarrollo
+- 📊 **psutil** - Información detallada del sistema Windows
+- 🖥️ **platform** - Detalles de la plataforma y arquitectura
+- 📦 **PyInstaller** - Compilación a ejecutable standalone
+- 🎨 **HTML/CSS** - Reportes profesionales y atractivos
+
+### 🌟 **Comunidad**
+- 🛡️ **Comunidad DFIR** - Por compartir conocimiento y mejores prácticas
+- 🔵 **Blue Team Community** - Por la inspiración y feedback
+- 🎓 **Comunidad Académica** - Por los fundamentos teóricos
+- 💻 **Desarrolladores Open Source** - Por las herramientas y librerías
 
 ---
 
-**ForenseCTL** - Framework de Análisis Forense Digital desarrollado para profesionales de ciberseguridad y equipos de respuesta a incidentes.
+<div align="center">
+
+## 🎯 **ForenseCTL Standalone**
+
+**Sistema Completo de Análisis Forense Digital**  
+*Desarrollado para profesionales de ciberseguridad y equipos DFIR*
+
+### 🚀 **8.44MB • Portable • Sin Dependencias • Listo para Usar**
 
 ---
 
 **Desarrollado con ❤️ para la comunidad de Blue Team y DFIR**
+
+[![⭐ Star en GitHub](https://img.shields.io/badge/⭐-Star%20en%20GitHub-yellow?style=for-the-badge)](https://github.com/ismaiars/ForenseCTL)
+[![📥 Descargar](https://img.shields.io/badge/📥-Descargar%20Ejecutable-green?style=for-the-badge)](ForenseCTL_Distribution/ForenseCTL.exe)
+[![📖 Documentación](https://img.shields.io/badge/📖-Documentación-blue?style=for-the-badge)](README.md)
+
+</div>
