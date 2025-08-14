@@ -646,7 +646,7 @@ Este proyecto está licenciado bajo la **Licencia MIT** - consulta el archivo [L
 
 ### 🐛 **Reportar Problemas**
 - **GitHub Issues**: [Crear nuevo issue](https://github.com/ismaiars/ForenseCTL/issues)
-- **Email**: soporte@forensectl.com
+- **Email**: iarsfate@gmail.com
 - **Documentación**: Wiki del proyecto
 
 ### 🤝 **Contribuciones**
